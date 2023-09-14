@@ -2,34 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jyp-on.github.io/posts/2014/09/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/posts/2014/09/cr%C3%A9ation-dun-nouveau-th%C3%A8me/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/posts/2014/09/creating-a-new-theme/"
-                />
-  </url><url>
-    <loc>https://jyp-on.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/posts/2014/03/migrer-vers-hugo-depuis-jekyll/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/"
-                />
-  </url><url>
     <loc>https://jyp-on.github.io/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -41,81 +15,20 @@
                 href="https://jyp-on.github.io/"
                 />
   </url><url>
+    <loc>https://jyp-on.github.io/tags/naver-cloud/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.github.io/tags/object-storage/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jyp-on.github.io/posts/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/posts/"
-                />
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jyp-on.github.io/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/posts/2014/04/hugo-template-primer/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/posts/2014/04/introduction-aux-mod%C3%A8les-hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/posts/2014/04/hugo-template-primer/"
-                />
-  </url><url>
-    <loc>https://jyp-on.github.io/categories/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/categories/"
-                />
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/posts/2014/04/getting-started-with-hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/posts/2014/04/d%C3%A9buter-avec-hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/posts/2014/04/getting-started-with-hugo/"
-                />
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://jyp-on.github.io/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jyp-on.github.io/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -127,10 +40,19 @@
                 href="https://jyp-on.github.io/tags/"
                 />
   </url><url>
-    <loc>https://jyp-on.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://jyp-on.github.io/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jyp-on.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://jyp-on.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://jyp-on.github.io/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jyp-on.github.io/categories/"
+                />
   </url>
 </urlset>

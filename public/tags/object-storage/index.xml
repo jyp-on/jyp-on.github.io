@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jyp-on</title>
-    <link>https://jyp-on.github.io/</link>
-    <description>Recent content on jyp-on</description>
+    <title>Object Storage on jyp-on</title>
+    <link>https://jyp-on.github.io/tags/object-storage/</link>
+    <description>Recent content in Object Storage on jyp-on</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jyp-on.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jyp-on.github.io/tags/object-storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Boot [NaverCloud ObjectStorage] 사용법</title>
       <link>https://jyp-on.github.io/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
@@ -21,17 +21,6 @@
 AWS 과금에 당한적이있음.
 objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아직까지 0원 청구됨. (매우쌈)
 Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://jyp-on.github.io/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://jyp-on.github.io/about/</guid>
-      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
-https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper Learn more and contribute on GitHub.</description>
     </item>
     
   </channel>
