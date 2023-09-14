@@ -102,18 +102,6 @@
                 href="https://jyp-on.github.io/fr/posts/2014/03/migrer-vers-hugo-depuis-jekyll/"
                 />
   </url><url>
-    <loc>https://jyp-on.github.io/fr/series/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/series/"
-                />
-  </url><url>
     <loc>https://jyp-on.github.io/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"

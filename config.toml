@@ -1,6 +1,6 @@
 baseURL = "https://jyp-on.github.io"
 title   = "jyp-on"
-languageCode = "en-us"
+languageCode = "ko-kr"
 theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
@@ -45,7 +45,6 @@ disableHugoGeneratorInject = false
 [taxonomies]
   tag      = "tags"
   category = "categories"
-  series   = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -61,7 +60,7 @@ disableHugoGeneratorInject = false
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = "Hello Friend NG"
+  homeSubtitle = "Backend Devloper"
 
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"
@@ -80,7 +79,7 @@ disableHugoGeneratorInject = false
   # Per default, this option is off. 
   # The theme is respecting the prefers-color-scheme of the operating systeme. 
   # With this option on, the page user is able to set the scheme he wants. 
-  enableThemeToggle = false
+  enableThemeToggle = true
 
   # Sharing buttons
   #
@@ -94,7 +93,7 @@ disableHugoGeneratorInject = false
   #
   # Enables the global language menu.
   #
-  enableGlobalLanguageMenu = true
+  enableGlobalLanguageMenu = false
 
   # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
@@ -115,9 +114,9 @@ disableHugoGeneratorInject = false
   #
   [params.footer]
     trademark = true
-    rss = true
-    copyright = true
-    author = true
+    rss = false
+    copyright = false
+    author = false
 
     topText = []
     bottomText = [
@@ -139,9 +138,9 @@ disableHugoGeneratorInject = false
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false
     # Set to a valid CSS color to change the cursor in the logo.
-    # logoCursorColor    = "#67a2c9"
+    logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
-    # logoCursorAnimate  = "2s"
+    logoCursorAnimate  = "1.5s"
     # Append the current url pathname to logoText 
     # logoCursorPathname = true
 
@@ -158,31 +157,23 @@ disableHugoGeneratorInject = false
 
   # Uncomment this if you want a portrait on your start page
   #
-  # [params.portrait]
-  #   path     = "/img/image.jpg"
-  #   alt      = "Portrait"
-  #   maxWidth = "50px"
+  [params.portrait]
+    path     = "/img/portrait.png"
+    alt      = "Portrait"
+    maxWidth = "100px"
 
   # Social icons
-  [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/"
-
-  [[params.social]]
-    name = "email"
-    url  = "mailto:nobody@example.com"
 
   [[params.social]]
     name = "github"
-    url  = "https://github.com/"
-
+    url ="https://github.com/jyp-on"
   [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/"
-
+    name = "instagram"
+    url ="https://www.instagram.com/jyp.on/"
   [[params.social]]
-    name = "stackoverflow"
-    url  = "https://www.stackoverflow.com/"
+    name = "email"
+    url ="mailto:ju0_park@naver.com"
+
 
 [languages]
   [languages.en]
@@ -197,10 +188,14 @@ disableHugoGeneratorInject = false
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "about/"
+    identifier = "post"
+    name       = "Post"
+    url        = "/posts"
   [[menu.main]]
-    identifier = "posts"
-    name       = "Posts"
-    url        = "posts/"
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags"
+  [[menu.main]]
+    identifier = "category"
+    name       = "Category"
+    url        = "/categories"
