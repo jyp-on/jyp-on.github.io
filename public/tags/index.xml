@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on jyp-on</title>
-    <link>https://jyp-on.github.io/tags/</link>
+    <link>https://jyp-on.dev/tags/</link>
     <description>Recent content in Tags on jyp-on</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jyp-on.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jyp-on.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Naver Cloud</title>
-      <link>https://jyp-on.github.io/tags/naver-cloud/</link>
+      <link>https://jyp-on.dev/tags/naver-cloud/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://jyp-on.github.io/tags/naver-cloud/</guid>
+      <guid>https://jyp-on.dev/tags/naver-cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Object Storage</title>
-      <link>https://jyp-on.github.io/tags/object-storage/</link>
+      <link>https://jyp-on.dev/tags/object-storage/</link>
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://jyp-on.github.io/tags/object-storage/</guid>
+      <guid>https://jyp-on.dev/tags/object-storage/</guid>
       <description></description>
     </item>
     

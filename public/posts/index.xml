@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on jyp-on</title>
-        <link>https://jyp-on.github.io/posts/</link>
+        <link>https://jyp-on.dev/posts/</link>
         <description>Recent content in Posts on jyp-on</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://jyp-on.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://jyp-on.dev/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Spring Boot [NaverCloud ObjectStorage] 사용법</title>
-            <link>https://jyp-on.github.io/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+            <link>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
             <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
             
-            <guid>https://jyp-on.github.io/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+            <guid>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
             <description>이번에 진행하는 프로젝트에서 영상 및 JSON 파일을 object storage에 저장하는 서비스 로직을 추가하게 되었다
 설명에 앞서 Amazon의 S3가 아닌 Ncloud의 objectStorage를 선정한 이유는 크게 4가지다.
 국내서비스라 문서읽기가 매우편함.

@@ -6,7 +6,7 @@ tags = [
     "Naver Cloud"
 ]
 date = "2023-09-02"
-categories = []
+categories = ["spring boot"]
 +++
 
 이번에 진행하는 프로젝트에서 영상 및 JSON 파일을 object storage에 저장하는 서비스 로직을 추가하게 되었다

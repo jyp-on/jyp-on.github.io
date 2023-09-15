@@ -1,4 +1,4 @@
-baseURL = "https://jyp-on.github.io"
+baseURL = "https://jyp-on.dev"
 title   = "jyp-on"
 languageCode = "ko-kr"
 theme = "hello-friend-ng"
@@ -189,13 +189,18 @@ disableHugoGeneratorInject = false
 [menu]
   [[menu.main]]
     identifier = "post"
-    name       = "Post"
+    name       = "Posts"
     url        = "/posts"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "category"
+    name       = "Categories"
+    url        = "/categories"
+    weight = 2
+
   [[menu.main]]
     identifier = "tags"
     name       = "Tags"
     url        = "/tags"
-  [[menu.main]]
-    identifier = "category"
-    name       = "Category"
-    url        = "/categories"
+    weight = 3

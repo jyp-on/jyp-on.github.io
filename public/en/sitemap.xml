@@ -2,57 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jyp-on.github.io/</loc>
+    <loc>https://jyp-on.dev/categories/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://jyp-on.github.io/fr/"
+                href="https://jyp-on.dev/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jyp-on.github.io/"
+                href="https://jyp-on.dev/categories/"
                 />
   </url><url>
-    <loc>https://jyp-on.github.io/tags/naver-cloud/</loc>
-    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/object-storage/</loc>
-    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/posts/</loc>
-    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</loc>
-    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/tags/</loc>
+    <loc>https://jyp-on.dev/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://jyp-on.github.io/fr/tags/"
+                href="https://jyp-on.dev/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jyp-on.github.io/tags/"
+                href="https://jyp-on.dev/"
                 />
   </url><url>
-    <loc>https://jyp-on.github.io/about/</loc>
+    <loc>https://jyp-on.dev/tags/naver-cloud/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/object-storage/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/posts/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/categories/spring-boot/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/</loc>
+    <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://jyp-on.dev/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jyp-on.dev/tags/"
+                />
+  </url><url>
+    <loc>https://jyp-on.dev/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jyp-on.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://jyp-on.github.io/fr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jyp-on.github.io/categories/"
-                />
   </url>
 </urlset>
