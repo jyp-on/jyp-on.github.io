@@ -3,7 +3,8 @@
 {{ $prism := resources.Get "js/prism.js" }}
 {{ $secureJS := slice $main $menu $prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2672187198874460"
+     crossorigin="anonymous"></script>
 {{ range $val := $.Site.Params.customJS }}
     {{ if gt (len $val) 0 }}
         <script src="{{ $val }}"></script>
