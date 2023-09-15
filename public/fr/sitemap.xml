@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jyp-on.dev/fr/categories/</loc>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,6 +16,7 @@
                 />
   </url><url>
     <loc>https://jyp-on.dev/fr/</loc>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -27,6 +29,7 @@
                 />
   </url><url>
     <loc>https://jyp-on.dev/fr/tags/</loc>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

@@ -4,6 +4,7 @@
   <url>
     <loc>https://jyp-on.dev/categories/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -17,6 +18,7 @@
   </url><url>
     <loc>https://jyp-on.dev/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -30,21 +32,27 @@
   </url><url>
     <loc>https://jyp-on.dev/tags/naver-cloud/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/object-storage/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/categories/spring-boot/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/</loc>
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
+    <priority>1</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -58,5 +66,6 @@
   </url><url>
     <loc>https://jyp-on.dev/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <priority>1</priority>
   </url>
 </urlset>
