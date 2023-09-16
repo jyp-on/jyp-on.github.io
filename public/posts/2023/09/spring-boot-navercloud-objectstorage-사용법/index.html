@@ -224,52 +224,52 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
 <p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img1.png" alt="Alt text"></p>
 <p><strong>gradle 설정</strong></p>
 <p>나는 spring boot 2.7.14, jdk 11을 사용하였고 밑에 의존성을 추가하였다</p>
-<pre tabindex="0"><code>implementation &#39;com.amazonaws:aws-java-sdk-s3:1.11.238&#39;
-</code></pre><h2 id="1-ncloud에서-access-key-secret-key-발급">1. ncloud에서 access-key, secret-key 발급</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#39;com.amazonaws:aws-java-sdk-s3:1.11.238&#39;</span>
+</span></span></code></pre></div><h2 id="1-ncloud에서-access-key-secret-key-발급">1. ncloud에서 access-key, secret-key 발급</h2>
 <p>마이페이지 -&gt; 인증키 관리 (여기서 인증키를 발급하면 된다)</p>
 <h2 id="2-applicationyml-작성">2. application.yml 작성</h2>
 <p>발급받은 키를 작성해주고 사용할 bucket이름을 써주면된다.</p>
 <p>git같은 공유저장소에 올릴꺼라면 보안상 이파일을 숨겨주어야 한다.</p>
 <p>필자는 따로 application-secret 을 따로만들어서 prifiles로 불러왔다.</p>
-<pre tabindex="0"><code>cloud:
-  aws:
-    credentials:
-      access-key: &#34;&#34;
-      secret-key: &#34;&#34;
-    stack:
-      auto: false
-    region:
-      static: ap-northeast-2
-    s3:
-      endpoint: https://kr.object.ncloudstorage.com
-      bucket: &#34;rehab&#34;
-</code></pre><h2 id="3-s3client-설정파일-만들기">3. S3Client 설정파일 만들기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">cloud</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">aws</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentials</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">access-key</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">secret-key</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">stack</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">auto</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">region</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">static</span>: <span style="color:#ae81ff">ap-northeast-2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">s3</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">endpoint</span>: <span style="color:#ae81ff">https://kr.object.ncloudstorage.com</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">bucket</span>: <span style="color:#e6db74">&#34;rehab&#34;</span>
+</span></span></code></pre></div><h2 id="3-s3client-설정파일-만들기">3. S3Client 설정파일 만들기</h2>
 <p>@Configuration을 통해 설정파일을 만들어준다. (Configuration은 싱글톤을 유지해줘서 설정파일에 많이쓰인다고함)</p>
 <p>외부에서 S3Client의 getAmazonS3 메소드를 이용해 s3 객체를 사용할 수 있도록 Bean 등록 해주었다.</p>
 <p>Amazon s3와 연동되게 만들어서 그런지 AmazonS3를 반환해서 사용한다.</p>
-<pre tabindex="0"><code>@Configuration
-public class S3Client {
-
-    @Value(&#34;${cloud.aws.credentials.access-key}&#34;)
-    private String accessKey;
-
-    @Value(&#34;${cloud.aws.credentials.secret-key}&#34;)
-    private String secretKey;
-
-    @Value(&#34;${cloud.aws.s3.endpoint}&#34;)
-    private String endPoint;
-
-    @Value(&#34;${cloud.aws.region.static}&#34;)
-    private String regionName;
-
-    public AmazonS3 getAmazonS3() {
-        return AmazonS3ClientBuilder.standard()
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endPoint, regionName))
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
-                .build();
-    }
-}
-</code></pre><h2 id="4-uploadapi-구현">4. UploadAPI 구현</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">S3Client</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${cloud.aws.credentials.access-key}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String accessKey<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${cloud.aws.credentials.secret-key}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String secretKey<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${cloud.aws.s3.endpoint}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String endPoint<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${cloud.aws.region.static}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String regionName<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> AmazonS3 <span style="color:#a6e22e">getAmazonS3</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> AmazonS3ClientBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">standard</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">withEndpointConfiguration</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AwsClientBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">EndpointConfiguration</span><span style="color:#f92672">(</span>endPoint<span style="color:#f92672">,</span> regionName<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">withCredentials</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AWSStaticCredentialsProvider<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> BasicAWSCredentials<span style="color:#f92672">(</span>accessKey<span style="color:#f92672">,</span> secretKey<span style="color:#f92672">)))</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="4-uploadapi-구현">4. UploadAPI 구현</h2>
 <p>필자의 서비스로직 중 upload부분만 따로 가져왔다.</p>
 <p>나는 MultipartFile들을 받아 File로 변환 후 S3에 경로를 지정후 저장해준다. (File로 변환해야 저장할수있음)</p>
 <p>Path와 URL이 각각 존재하는 이유는 Path는 Object Stroage에 실제로 저장되는 경로이고 URL은 사용자가 접근 하여 파일을 얻을 수 있는 경로이다.</p>
@@ -277,81 +277,81 @@ public class S3Client {
 <p>Path에서 video/, json/ 이 경로가 아까만든 bucket에 만든 폴더라고 보면된다.</p>
 <p>추가적으로 uuid를 만들어 파일명 앞에 붙여놓았다. 같은 파일이름이 있으면 에러가 나기때문.</p>
 <p>전달받은 이미지들은 spring이 정해진 임시저장소에 저장하는데 file upload가 끝나면 삭제처리를 해주었다. </p>
-<pre tabindex="0"><code>public UploadFileDTO uploadFileToS3(MultipartFile videoFile, MultipartFile jsonFile, Program program) {
-    AmazonS3 s3 = s3Client.getAmazonS3();
-
-    UUID uuid = UUID.randomUUID();
-    String videoFileName = uuid + &#34;_&#34; + videoFile.getOriginalFilename();
-    String jsonFileName = uuid + &#34;_&#34; + jsonFile.getOriginalFilename();
-
-    File uploadVideoFile = null;
-    File uploadJsonFile = null;
-
-    try {
-        uploadVideoFile = convertMultipartFileToFile(videoFile, videoFileName);
-        uploadJsonFile = convertMultipartFileToFile(jsonFile, jsonFileName);
-
-        String guideVideoObjectPath = &#34;video/&#34; + videoFileName;
-        String jsonObjectPath = &#34;json/&#34; + jsonFileName;
-
-        s3.putObject(bucketName, guideVideoObjectPath, uploadVideoFile);
-        s3.putObject(bucketName, jsonObjectPath, uploadJsonFile);
-
-        String baseUploadURL = &#34;https://kr.object.ncloudstorage.com/&#34; + bucketName + &#34;/&#34;;
-        String guideVideoURL = baseUploadURL + guideVideoObjectPath;
-        String jsonURL = baseUploadURL + jsonObjectPath;
-
-        log.info(guideVideoURL);
-        log.info(jsonURL);
-
-        setAcl(s3, guideVideoObjectPath);
-        setAcl(s3, jsonObjectPath);
-
-        return UploadFileDTO.builder()
-                .guideVideoURL(guideVideoURL)
-                .jsonURL(jsonURL)
-                .guideVideoObjectPath(guideVideoObjectPath)
-                .jsonObjectPath(jsonObjectPath)
-                .build();
-
-    } catch (AmazonS3Exception e) { // ACL Exception
-        log.info(e.getErrorMessage());
-        System.exit(1);
-        return null; // 업로드 오류 시 null 반환
-    } finally {
-        // 업로드에 사용한 임시 파일을 삭제합니다.
-        if (uploadVideoFile != null) uploadVideoFile.delete();
-        if (uploadJsonFile != null) uploadJsonFile.delete();
-    }
-}
-</code></pre><p>또 설명할 중요한 부분이 남아있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> UploadFileDTO <span style="color:#a6e22e">uploadFileToS3</span><span style="color:#f92672">(</span>MultipartFile videoFile<span style="color:#f92672">,</span> MultipartFile jsonFile<span style="color:#f92672">,</span> Program program<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    AmazonS3 s3 <span style="color:#f92672">=</span> s3Client<span style="color:#f92672">.</span><span style="color:#a6e22e">getAmazonS3</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    UUID uuid <span style="color:#f92672">=</span> UUID<span style="color:#f92672">.</span><span style="color:#a6e22e">randomUUID</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    String videoFileName <span style="color:#f92672">=</span> uuid <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> videoFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getOriginalFilename</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    String jsonFileName <span style="color:#f92672">=</span> uuid <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> jsonFile<span style="color:#f92672">.</span><span style="color:#a6e22e">getOriginalFilename</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    File uploadVideoFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    File uploadJsonFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        uploadVideoFile <span style="color:#f92672">=</span> convertMultipartFileToFile<span style="color:#f92672">(</span>videoFile<span style="color:#f92672">,</span> videoFileName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        uploadJsonFile <span style="color:#f92672">=</span> convertMultipartFileToFile<span style="color:#f92672">(</span>jsonFile<span style="color:#f92672">,</span> jsonFileName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String guideVideoObjectPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;video/&#34;</span> <span style="color:#f92672">+</span> videoFileName<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        String jsonObjectPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;json/&#34;</span> <span style="color:#f92672">+</span> jsonFileName<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        s3<span style="color:#f92672">.</span><span style="color:#a6e22e">putObject</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> guideVideoObjectPath<span style="color:#f92672">,</span> uploadVideoFile<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        s3<span style="color:#f92672">.</span><span style="color:#a6e22e">putObject</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> jsonObjectPath<span style="color:#f92672">,</span> uploadJsonFile<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String baseUploadURL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://kr.object.ncloudstorage.com/&#34;</span> <span style="color:#f92672">+</span> bucketName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        String guideVideoURL <span style="color:#f92672">=</span> baseUploadURL <span style="color:#f92672">+</span> guideVideoObjectPath<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        String jsonURL <span style="color:#f92672">=</span> baseUploadURL <span style="color:#f92672">+</span> jsonObjectPath<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span>guideVideoURL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span>jsonURL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        setAcl<span style="color:#f92672">(</span>s3<span style="color:#f92672">,</span> guideVideoObjectPath<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        setAcl<span style="color:#f92672">(</span>s3<span style="color:#f92672">,</span> jsonObjectPath<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> UploadFileDTO<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">guideVideoURL</span><span style="color:#f92672">(</span>guideVideoURL<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">jsonURL</span><span style="color:#f92672">(</span>jsonURL<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">guideVideoObjectPath</span><span style="color:#f92672">(</span>guideVideoObjectPath<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">jsonObjectPath</span><span style="color:#f92672">(</span>jsonObjectPath<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>AmazonS3Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// ACL Exception
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getErrorMessage</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 업로드 오류 시 null 반환
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 업로드에 사용한 임시 파일을 삭제합니다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>uploadVideoFile <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> uploadVideoFile<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>uploadJsonFile <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> uploadJsonFile<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>또 설명할 중요한 부분이 남아있다.</p>
 <p>bucket은 폴더, 파일 단위로 외부에 공개할 수 있는 설정 권한을 매번 설정해줘야하는데 다음과 같이 변경하면</p>
 <p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img2.png" alt="Alt text"></p>
 <p>json/ 밑에 생기는 파일들은 새로 생기는 파일들이라 다시 외부에 비공개가되어 이짓거리를 매번 해줘야한다.</p>
 <p>그래서 생각해낸 방법이 파일을 생성하자마자 그 파일에 대한 권한을 바꾸는 방법이다.</p>
 <p>Docs를 찾아보니 ACL 권한을 수정하는 API가 존재하였다.</p>
 <p>필자는 setAcl 이라는 메소드를 지정해서 s3 인스턴스와 Path를 넘겨서 처리하였다.</p>
-<pre tabindex="0"><code>public void setAcl(AmazonS3 s3, String objectPath) {
-    AccessControlList objectAcl = s3.getObjectAcl(bucketName, objectPath);
-    objectAcl.grantPermission(GroupGrantee.AllUsers, Permission.Read);
-    s3.setObjectAcl(bucketName, objectPath, objectAcl);
-}
-</code></pre><p>이런식으로 Read권한을 설정해주면 등록 한 후 권한을 바로 바꿔주어서 URL로 Client가 바로 접근가능하다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAcl</span><span style="color:#f92672">(</span>AmazonS3 s3<span style="color:#f92672">,</span> String objectPath<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    AccessControlList objectAcl <span style="color:#f92672">=</span> s3<span style="color:#f92672">.</span><span style="color:#a6e22e">getObjectAcl</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> objectPath<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    objectAcl<span style="color:#f92672">.</span><span style="color:#a6e22e">grantPermission</span><span style="color:#f92672">(</span>GroupGrantee<span style="color:#f92672">.</span><span style="color:#a6e22e">AllUsers</span><span style="color:#f92672">,</span> Permission<span style="color:#f92672">.</span><span style="color:#a6e22e">Read</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    s3<span style="color:#f92672">.</span><span style="color:#a6e22e">setObjectAcl</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> objectPath<span style="color:#f92672">,</span> objectAcl<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>이런식으로 Read권한을 설정해주면 등록 한 후 권한을 바로 바꿔주어서 URL로 Client가 바로 접근가능하다.</p>
 <h2 id="5-delete-api-구현">5. Delete API 구현</h2>
 <p>마찬가지로 bucketname과 Path를 이용하여 삭제 요청을 하면된다.</p>
-<pre tabindex="0"><code>public void deleteFileFromS3(String guideVideoObjectPath, String jsonObjectPath) {
-    AmazonS3 s3 = s3Client.getAmazonS3();
-
-    try {
-        s3.deleteObject(bucketName, guideVideoObjectPath);
-        s3.deleteObject(bucketName, jsonObjectPath);
-        log.info(&#34;Delete Object successfully&#34;);
-    } catch(SdkClientException e) {
-        e.printStackTrace();
-        log.info(&#34;Error deleteFileFromS3&#34;);
-    }
-}
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteFileFromS3</span><span style="color:#f92672">(</span>String guideVideoObjectPath<span style="color:#f92672">,</span> String jsonObjectPath<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    AmazonS3 s3 <span style="color:#f92672">=</span> s3Client<span style="color:#f92672">.</span><span style="color:#a6e22e">getAmazonS3</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        s3<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteObject</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> guideVideoObjectPath<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        s3<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteObject</span><span style="color:#f92672">(</span>bucketName<span style="color:#f92672">,</span> jsonObjectPath<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Delete Object successfully&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>SdkClientException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error deleteFileFromS3&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
       </div>
     </article>
 

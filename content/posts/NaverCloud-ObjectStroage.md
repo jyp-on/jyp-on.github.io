@@ -43,7 +43,7 @@ aws s3랑은 다르게 리소스가 좀 부족하여 개인적으로 커스터�
 
 나는 spring boot 2.7.14, jdk 11을 사용하였고 밑에 의존성을 추가하였다
 
-```
+``` gradle
 implementation 'com.amazonaws:aws-java-sdk-s3:1.11.238'
 ```
 
@@ -59,7 +59,7 @@ git같은 공유저장소에 올릴꺼라면 보안상 이파일을 숨겨주어
 
 필자는 따로 application-secret 을 따로만들어서 prifiles로 불러왔다.
 
-```
+``` yml
 cloud:
   aws:
     credentials:
@@ -82,7 +82,7 @@ cloud:
 
 Amazon s3와 연동되게 만들어서 그런지 AmazonS3를 반환해서 사용한다.
 
-```
+``` java
 @Configuration
 public class S3Client {
 
@@ -123,7 +123,7 @@ Path에서 video/, json/ 이 경로가 아까만든 bucket에 만든 폴더라�
 
 전달받은 이미지들은 spring이 정해진 임시저장소에 저장하는데 file upload가 끝나면 삭제처리를 해주었다. 
 
-```
+``` java
 public UploadFileDTO uploadFileToS3(MultipartFile videoFile, MultipartFile jsonFile, Program program) {
     AmazonS3 s3 = s3Client.getAmazonS3();
 
@@ -187,7 +187,7 @@ Docs를 찾아보니 ACL 권한을 수정하는 API가 존재하였다.
 
 필자는 setAcl 이라는 메소드를 지정해서 s3 인스턴스와 Path를 넘겨서 처리하였다.
 
-```
+``` java
 public void setAcl(AmazonS3 s3, String objectPath) {
     AccessControlList objectAcl = s3.getObjectAcl(bucketName, objectPath);
     objectAcl.grantPermission(GroupGrantee.AllUsers, Permission.Read);
@@ -201,7 +201,7 @@ public void setAcl(AmazonS3 s3, String objectPath) {
 
 마찬가지로 bucketname과 Path를 이용하여 삭제 요청을 하면된다.
 
-```
+``` java
 public void deleteFileFromS3(String guideVideoObjectPath, String jsonObjectPath) {
     AmazonS3 s3 = s3Client.getAmazonS3();
 
