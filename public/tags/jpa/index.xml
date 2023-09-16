@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jpa on &lt;{😎}&gt;</title>
+    <link>https://jyp-on.dev/tags/jpa/</link>
+    <description>Recent content in jpa on &lt;{😎}&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 08 Sep 2023 22:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Boot JPQL DTO Mapping</title>
+      <link>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</link>
+      <pubDate>Fri, 08 Sep 2023 22:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</guid>
+      <description>jpa를 사용할때 jpa repository에서 return 을 DTO로 변환해서 받을 수 있다.
+jpql select 부분에서 DTO로 사용할 객체를 생성 해줘야한다. 주의할 점은 DTO 생성시 패키지 초반부분부터 적어줘야 찾을 수 있다.
+먼저 Person 객체와 PersonDTO 객체가 있다고 가정하자.
+Person 객체에는 name, age, email, id,
+PersonDTO 객체에는 name, age
+이고 만약 최소 나이를 파라미터로 그 나이 이상의 Person 객체를 가져오고 싶다면 JPQL을 아래와 같이 구성 해야 한다.
+@Query(value = &amp;#34;SELECT &amp;#34; + &amp;#34;new com.</description>
+    </item>
+    
+  </channel>
+</rss>

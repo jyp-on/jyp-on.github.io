@@ -1,18 +1,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on jyp-on</title>
+        <title>Posts on &lt;{😎}&gt;</title>
         <link>https://jyp-on.dev/posts/</link>
-        <description>Recent content in Posts on jyp-on</description>
+        <description>Recent content in Posts on &lt;{😎}&gt;</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-        <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 08 Sep 2023 22:16:00 -0600</lastBuildDate>
         <atom:link href="https://jyp-on.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Spring Boot JPQL DTO Mapping</title>
+            <link>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</link>
+            <pubDate>Fri, 08 Sep 2023 22:16:00 -0600</pubDate>
+            
+            <guid>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</guid>
+            <description>jpa를 사용할때 jpa repository에서 return 을 DTO로 변환해서 받을 수 있다.
+jpql select 부분에서 DTO로 사용할 객체를 생성 해줘야한다. 주의할 점은 DTO 생성시 패키지 초반부분부터 적어줘야 찾을 수 있다.
+먼저 Person 객체와 PersonDTO 객체가 있다고 가정하자.
+Person 객체에는 name, age, email, id,
+PersonDTO 객체에는 name, age
+이고 만약 최소 나이를 파라미터로 그 나이 이상의 Person 객체를 가져오고 싶다면 JPQL을 아래와 같이 구성 해야 한다.
+@Query(value = &amp;#34;SELECT &amp;#34; + &amp;#34;new com.</description>
+            <content type="html"><![CDATA[<p>jpa를 사용할때 jpa repository에서 return 을 <strong>DTO</strong>로 변환해서 받을 수 있다.</p>
+<p>jpql select 부분에서 DTO로 사용할 객체를 생성 해줘야한다.
+주의할 점은 DTO 생성시 패키지 초반부분부터 적어줘야 찾을 수 있다.</p>
+<p>먼저 Person 객체와 PersonDTO 객체가 있다고 가정하자.</p>
+<p><code>Person 객체에는 name, age, email, id</code>,<br>
+<code>PersonDTO 객체에는 name, age</code><br>
+이고 만약 최소 나이를 파라미터로 그 나이 이상의 Person 객체를 가져오고 싶다면 JPQL을 아래와 같이 구성 해야 한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Query</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;SELECT &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;new com.a.b.person.dto.PersonDTO(p.name, p.age) &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;FROM Person p &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;WHERE p.age &gt;= :minAge&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>PersonDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getDTOByAge</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@Param</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;minAge&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">int</span> minAge<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>List<!-- raw HTML omitted --> 로 받아온 이유는 여러개의 데이터가 있을 수 있기 때문이다.<br>
+만약 그냥 PersonDTO로 Return Type을 지정하였는데 2개 이상의 결과가 있으면 오류가 발생한다.</p>
+<p>DTO 객체에 <strong>Json Auto Detect</strong> 어노테이션이 없으면 private field 접근을 못해서 json 변환이 안된다.<br>
+또한 new 로 생성을 해줘야 하기 때문에 AllArgsConstructor도 넣어주자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@AllArgsConstructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@JsonAutoDetect</span><span style="color:#f92672">(</span>fieldVisibility <span style="color:#f92672">=</span> JsonAutoDetect<span style="color:#f92672">.</span><span style="color:#a6e22e">Visibility</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ANY</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersonDTO</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Spring Boot [NaverCloud ObjectStorage] 사용법</title>
             <link>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
-            <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+            <pubDate>Sat, 02 Sep 2023 16:14:00 -0600</pubDate>
             
             <guid>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
             <description>이번에 진행하는 프로젝트에서 영상 및 JSON 파일을 object storage에 저장하는 서비스 로직을 추가하게 되었다

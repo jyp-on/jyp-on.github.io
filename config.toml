@@ -1,5 +1,5 @@
 baseURL = "https://jyp-on.dev"
-title   = "jyp-on"
+title   = "<{😎}>"
 languageCode = "ko-kr"
 theme = "hello-friend-ng"
 
@@ -63,7 +63,7 @@ disableHugoGeneratorInject = false
   homeSubtitle = "Backend Devloper"
 
   # Set a background for the homepage
-  # backgroundImage = "assets/images/background.jpg"
+  # backgroundImage = "/index/portrait.png"
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   #
@@ -178,7 +178,7 @@ disableHugoGeneratorInject = false
 [languages]
   [languages.en]
     weight    = 1
-    subtitle = "blog"
+    # subtitle = "blog"
 
 [menu]
   [[menu.main]]

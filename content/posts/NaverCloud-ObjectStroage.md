@@ -1,11 +1,10 @@
 +++
 title = "Spring Boot [NaverCloud ObjectStorage] 사용법"
-description = ""
 tags = [
     "Object Storage",
     "Naver Cloud"
 ]
-date = "2023-09-02"
+date = "2023-09-02T16:14:00-06:00"
 categories = ["spring boot"]
 +++
 

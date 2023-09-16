@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on jyp-on</title>
+    <title>Tags on &lt;{😎}&gt;</title>
     <link>https://jyp-on.dev/tags/</link>
-    <description>Recent content in Tags on jyp-on</description>
+    <description>Recent content in Tags on &lt;{😎}&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jyp-on.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Sep 2023 22:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jpa</title>
+      <link>https://jyp-on.dev/tags/jpa/</link>
+      <pubDate>Fri, 08 Sep 2023 22:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/tags/jpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jpql</title>
+      <link>https://jyp-on.dev/tags/jpql/</link>
+      <pubDate>Fri, 08 Sep 2023 22:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/tags/jpql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Naver Cloud</title>
       <link>https://jyp-on.dev/tags/naver-cloud/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Sep 2023 16:14:00 -0600</pubDate>
       
       <guid>https://jyp-on.dev/tags/naver-cloud/</guid>
       <description></description>
@@ -20,7 +38,7 @@
     <item>
       <title>Object Storage</title>
       <link>https://jyp-on.dev/tags/object-storage/</link>
-      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Sep 2023 16:14:00 -0600</pubDate>
       
       <guid>https://jyp-on.dev/tags/object-storage/</guid>
       <description></description>
