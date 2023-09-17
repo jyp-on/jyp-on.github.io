@@ -1,8 +1,8 @@
 +++
 title = "Spring Boot [NaverCloud ObjectStorage] 사용법"
 tags = [
-    "Object Storage",
-    "Naver Cloud"
+    "object storage",
+    "naver cloud"
 ]
 date = "2023-09-02T16:14:00-06:00"
 categories = ["spring boot"]
@@ -20,6 +20,8 @@ categories = ["spring boot"]
 
 4. objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아직까지 0원 청구됨. (매우쌈)
 
+
+
 Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다
 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음
 
@@ -35,7 +37,7 @@ aws s3랑은 다르게 리소스가 좀 부족하여 개인적으로 커스터�
 
 추가적으로 json이랑 video 파일을 업로드할 폴더를 구분해놓았다. (이건 자유)
 
-![Alt text](/NaverCloud-ObjectStroage/img1.png)
+![Bucket Management](/NaverCloud-ObjectStroage/img1.png)
 
 
 **gradle 설정**
@@ -176,7 +178,7 @@ public UploadFileDTO uploadFileToS3(MultipartFile videoFile, MultipartFile jsonF
 
 bucket은 폴더, 파일 단위로 외부에 공개할 수 있는 설정 권한을 매번 설정해줘야하는데 다음과 같이 변경하면
 
-![Alt text](/NaverCloud-ObjectStroage/img2.png)
+![폴더 파일공개](/NaverCloud-ObjectStroage/img2.png)
 
 json/ 밑에 생기는 파일들은 새로 생기는 파일들이라 다시 외부에 비공개가되어 이짓거리를 매번 해줘야한다.
 

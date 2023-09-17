@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>orm on &lt;{😎}&gt;</title>
+    <link>https://jyp-on.dev/tags/orm/</link>
+    <description>Recent content in orm on &lt;{😎}&gt;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>지연로딩, 즉시로딩이란?</title>
+      <link>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</link>
+      <pubDate>Fri, 15 Sep 2023 23:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</guid>
+      <description>Fetch Type 설명 지연로딩 (LAZY) 연관된 객체를 사용하는 시점에 적절한 SELECT SQL을 실행 즉시로딩 (EAGER) 메인 객체 조회시 객체그래프를 탐색하여 연관된 객체 전부 SELECT 지연로딩을 예를 들어 Member에 직접적으로 연관된 테이블이 Team, Order이 있다고 치자.
+// 첫 조회 시점에 SELECT MEMBER SQL을 날리고 Member member = jpa.find(Member.class, memberId); Team team = member.getTeam(); team.getTeamName(); // 이 시점에 SELECT TEAM SQL을 날린다. 즉시로딩 Example
+// 첫 조회 시점에 SELECT MEMBER, TEAM, ORDER SQL을 날린다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -12,7 +12,7 @@
 AWS 과금에 당한적이있음.
 objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아직까지 0원 청구됨. (매우쌈)
 Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음" />
-<meta name="keywords" content=", Object Storage, Naver Cloud" />
+<meta name="keywords" content=", object storage, naver cloud" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/" />
@@ -50,7 +50,7 @@ objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아
 Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음"><meta itemprop="datePublished" content="2023-09-02T16:14:00-06:00" />
 <meta itemprop="dateModified" content="2023-09-02T16:14:00-06:00" />
 <meta itemprop="wordCount" content="638"><meta itemprop="image" content="https://jyp-on.dev"/>
-<meta itemprop="keywords" content="Object Storage,Naver Cloud," />
+<meta itemprop="keywords" content="object storage,naver cloud," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jyp-on.dev"/>
 
@@ -143,8 +143,8 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://jyp-on.dev/tags/object-storage/">Object Storage</a></span>
-        <span class="tag"><a href="https://jyp-on.dev/tags/naver-cloud/">Naver Cloud</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/tags/object-storage/">object storage</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/tags/naver-cloud/">naver cloud</a></span>
         
     </p>
 
@@ -221,7 +221,7 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
 <p>먼저 object storage를 사용신청하고 bucket을 만들어야한다.</p>
 <p>나는 rehab이라는 bucket을 만들어놓았다.</p>
 <p>추가적으로 json이랑 video 파일을 업로드할 폴더를 구분해놓았다. (이건 자유)</p>
-<p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img1.png" alt="Alt text"></p>
+<p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img1.png" alt="Bucket Management"></p>
 <p><strong>gradle 설정</strong></p>
 <p>나는 spring boot 2.7.14, jdk 11을 사용하였고 밑에 의존성을 추가하였다</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#39;com.amazonaws:aws-java-sdk-s3:1.11.238&#39;</span>
@@ -326,7 +326,7 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><p>또 설명할 중요한 부분이 남아있다.</p>
 <p>bucket은 폴더, 파일 단위로 외부에 공개할 수 있는 설정 권한을 매번 설정해줘야하는데 다음과 같이 변경하면</p>
-<p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img2.png" alt="Alt text"></p>
+<p><img src="https://jyp-on.dev/NaverCloud-ObjectStroage/img2.png" alt="폴더 파일공개"></p>
 <p>json/ 밑에 생기는 파일들은 새로 생기는 파일들이라 다시 외부에 비공개가되어 이짓거리를 매번 해줘야한다.</p>
 <p>그래서 생각해낸 방법이 파일을 생성하자마자 그 파일에 대한 권한을 바꾸는 방법이다.</p>
 <p>Docs를 찾아보니 ACL 권한을 수정하는 API가 존재하였다.</p>

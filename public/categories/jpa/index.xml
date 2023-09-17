@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>&lt;{😎}&gt;</title>
-    <link>https://jyp-on.dev/</link>
-    <description>Recent content on &lt;{😎}&gt;</description>
+    <title>jpa on &lt;{😎}&gt;</title>
+    <link>https://jyp-on.dev/categories/jpa/</link>
+    <description>Recent content in jpa on &lt;{😎}&gt;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/jpa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>지연로딩, 즉시로딩이란?</title>
       <link>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</link>
@@ -32,32 +32,6 @@ Person 객체에는 name, age, email, id,
 PersonDTO 객체에는 name, age
 이고 만약 최소 나이를 파라미터로 그 나이 이상의 Person 객체를 가져오고 싶다면 JPQL을 아래와 같이 구성 해야 한다.
 @Query(value = &amp;#34;SELECT &amp;#34; + &amp;#34;new com.</description>
-    </item>
-    
-    <item>
-      <title>Spring Boot [NaverCloud ObjectStorage] 사용법</title>
-      <link>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
-      <pubDate>Sat, 02 Sep 2023 16:14:00 -0600</pubDate>
-      
-      <guid>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
-      <description>이번에 진행하는 프로젝트에서 영상 및 JSON 파일을 object storage에 저장하는 서비스 로직을 추가하게 되었다
-설명에 앞서 Amazon의 S3가 아닌 Ncloud의 objectStorage를 선정한 이유는 크게 4가지다.
-국내서비스라 문서읽기가 매우편함.
-최근 Ncloud의 Server, DB 등등 사용해봐서 익숙함.
-AWS 과금에 당한적이있음.
-objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아직까지 0원 청구됨. (매우쌈)
-Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://jyp-on.dev/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://jyp-on.dev/about/</guid>
-      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
-https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper Learn more and contribute on GitHub.</description>
     </item>
     
   </channel>

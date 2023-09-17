@@ -6,8 +6,49 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-        <lastBuildDate>Fri, 08 Sep 2023 22:16:00 -0600</lastBuildDate>
+        <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate>
         <atom:link href="https://jyp-on.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>지연로딩, 즉시로딩이란?</title>
+            <link>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</link>
+            <pubDate>Fri, 15 Sep 2023 23:16:00 -0600</pubDate>
+            
+            <guid>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</guid>
+            <description>Fetch Type 설명 지연로딩 (LAZY) 연관된 객체를 사용하는 시점에 적절한 SELECT SQL을 실행 즉시로딩 (EAGER) 메인 객체 조회시 객체그래프를 탐색하여 연관된 객체 전부 SELECT 지연로딩을 예를 들어 Member에 직접적으로 연관된 테이블이 Team, Order이 있다고 치자.
+// 첫 조회 시점에 SELECT MEMBER SQL을 날리고 Member member = jpa.find(Member.class, memberId); Team team = member.getTeam(); team.getTeamName(); // 이 시점에 SELECT TEAM SQL을 날린다. 즉시로딩 Example
+// 첫 조회 시점에 SELECT MEMBER, TEAM, ORDER SQL을 날린다.</description>
+            <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">Fetch Type</th>
+<th style="text-align:left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">지연로딩 <strong>(LAZY)</strong></td>
+<td style="text-align:left">연관된 객체를 <strong>사용</strong>하는 시점에 적절한 SELECT SQL을 실행</td>
+</tr>
+<tr>
+<td style="text-align:left">즉시로딩 <strong>(EAGER)</strong></td>
+<td style="text-align:left">메인 객체 조회시 객체그래프를 탐색하여 연관된 객체 <strong>전부</strong> SELECT</td>
+</tr>
+</tbody>
+</table>
+<p><strong>지연로딩</strong>을 예를 들어 Member에 직접적으로 연관된 테이블이 Team, Order이 있다고 치자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 첫 조회 시점에 SELECT MEMBER SQL을 날리고
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Member member <span style="color:#f92672">=</span> jpa<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>Member<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> memberId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Team team <span style="color:#f92672">=</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">getTeam</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>team<span style="color:#f92672">.</span><span style="color:#a6e22e">getTeamName</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 이 시점에 SELECT TEAM SQL을 날린다.
+</span></span></span></code></pre></div><p><strong>즉시로딩</strong> Example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 첫 조회 시점에 SELECT MEMBER, TEAM, ORDER SQL을 날린다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Member member <span style="color:#f92672">=</span> jpa<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>Member<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> memberId<span style="color:#f92672">);</span> 
+</span></span></code></pre></div><p>즉시로딩은 한번 조회시에 모든 객체가 필요한 상황에서 쓰일 수 있으며<br>
+이런 경우를 제외하고는 지연로딩을 통해 메모리를 아껴야 한다.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Spring Boot JPQL DTO Mapping</title>
@@ -85,7 +126,7 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
 <p>먼저 object storage를 사용신청하고 bucket을 만들어야한다.</p>
 <p>나는 rehab이라는 bucket을 만들어놓았다.</p>
 <p>추가적으로 json이랑 video 파일을 업로드할 폴더를 구분해놓았다. (이건 자유)</p>
-<p><img src="/NaverCloud-ObjectStroage/img1.png" alt="Alt text"></p>
+<p><img src="/NaverCloud-ObjectStroage/img1.png" alt="Bucket Management"></p>
 <p><strong>gradle 설정</strong></p>
 <p>나는 spring boot 2.7.14, jdk 11을 사용하였고 밑에 의존성을 추가하였다</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#39;com.amazonaws:aws-java-sdk-s3:1.11.238&#39;</span>
@@ -190,7 +231,7 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><p>또 설명할 중요한 부분이 남아있다.</p>
 <p>bucket은 폴더, 파일 단위로 외부에 공개할 수 있는 설정 권한을 매번 설정해줘야하는데 다음과 같이 변경하면</p>
-<p><img src="/NaverCloud-ObjectStroage/img2.png" alt="Alt text"></p>
+<p><img src="/NaverCloud-ObjectStroage/img2.png" alt="폴더 파일공개"></p>
 <p>json/ 밑에 생기는 파일들은 새로 생기는 파일들이라 다시 외부에 비공개가되어 이짓거리를 매번 해줘야한다.</p>
 <p>그래서 생각해낸 방법이 파일을 생성하자마자 그 파일에 대한 권한을 바꾸는 방법이다.</p>
 <p>Docs를 찾아보니 ACL 권한을 수정하는 API가 존재하였다.</p>

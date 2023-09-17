@@ -3,22 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jyp-on.dev/</loc>
-    <lastmod>2023-09-08T22:16:00-06:00</lastmod>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/categories/</loc>
-    <lastmod>2023-09-08T22:16:00-06:00</lastmod>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
-    <loc>https://jyp-on.dev/tags/jpa/</loc>
-    <lastmod>2023-09-08T22:16:00-06:00</lastmod>
+    <loc>https://jyp-on.dev/categories/jpa/</loc>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
-    <loc>https://jyp-on.dev/tags/jpql/</loc>
-    <lastmod>2023-09-08T22:16:00-06:00</lastmod>
+    <loc>https://jyp-on.dev/tags/orm/</loc>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/</loc>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <priority>1</priority>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/</loc>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <priority>1</priority>
+  </url><url>
+    <loc>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</loc>
+    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <priority>1</priority>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/jpql/</loc>
     <lastmod>2023-09-08T22:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
@@ -27,10 +39,6 @@
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</loc>
-    <lastmod>2023-09-08T22:16:00-06:00</lastmod>
-    <priority>1</priority>
-  </url><url>
-    <loc>https://jyp-on.dev/tags/</loc>
     <lastmod>2023-09-08T22:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
