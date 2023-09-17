@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 05:10:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>N&#43;1 문제란</title>
+      <link>https://jyp-on.dev/posts/2023/09/n-1-%EB%AC%B8%EC%A0%9C%EB%9E%80/</link>
+      <pubDate>Sat, 16 Sep 2023 05:10:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/n-1-%EB%AC%B8%EC%A0%9C%EB%9E%80/</guid>
+      <description>N+1 문제의 예를들어 쉽게 설명 해보겠습니다.
+다음과 같은 쿼리로 MEMBER 100명을 조회합니다.
+SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대한 조회가 필요하다면 MEMBER 조회 시 TEAM에 대한 조회도 같이 이루어집니다.
+결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 + 100 = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 + N 조회라고 기억하는 편입니다.
+이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다.</description>
+    </item>
+    
     <item>
       <title>지연로딩, 즉시로딩이란?</title>
       <link>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</link>

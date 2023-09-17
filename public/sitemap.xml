@@ -3,22 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jyp-on.dev/</loc>
-    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <lastmod>2023-09-16T05:10:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/categories/</loc>
-    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <lastmod>2023-09-16T05:10:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/categories/jpa/</loc>
-    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <lastmod>2023-09-16T05:10:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
-    <loc>https://jyp-on.dev/tags/orm/</loc>
-    <lastmod>2023-09-15T23:16:00-06:00</lastmod>
+    <loc>https://jyp-on.dev/posts/2023/09/n-1-%EB%AC%B8%EC%A0%9C%EB%9E%80/</loc>
+    <lastmod>2023-09-16T05:10:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/</loc>
+    <lastmod>2023-09-16T05:10:00-06:00</lastmod>
+    <priority>1</priority>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/orm/</loc>
     <lastmod>2023-09-15T23:16:00-06:00</lastmod>
     <priority>1</priority>
   </url><url>
