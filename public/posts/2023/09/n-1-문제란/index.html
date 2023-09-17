@@ -8,7 +8,7 @@
 <meta name="description" content="N&#43;1 문제의 예를들어 쉽게 설명 해보겠습니다.
 다음과 같은 쿼리로 MEMBER 100명을 조회합니다.
 SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대한 조회가 필요하다면 MEMBER 조회 시 TEAM에 대한 조회도 같이 이루어집니다.
-결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; 100 = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 조회라고 기억하는 편입니다.
+결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; N(100) = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 문제라고 기억하는 편입니다.
 이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -42,7 +42,7 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 <meta itemprop="description" content="N&#43;1 문제의 예를들어 쉽게 설명 해보겠습니다.
 다음과 같은 쿼리로 MEMBER 100명을 조회합니다.
 SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대한 조회가 필요하다면 MEMBER 조회 시 TEAM에 대한 조회도 같이 이루어집니다.
-결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; 100 = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 조회라고 기억하는 편입니다.
+결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; N(100) = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 문제라고 기억하는 편입니다.
 이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다."><meta itemprop="datePublished" content="2023-09-16T05:10:00-06:00" />
 <meta itemprop="dateModified" content="2023-09-16T05:10:00-06:00" />
 <meta itemprop="wordCount" content="153"><meta itemprop="image" content="https://jyp-on.dev"/>
@@ -54,7 +54,7 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 <meta name="twitter:description" content="N&#43;1 문제의 예를들어 쉽게 설명 해보겠습니다.
 다음과 같은 쿼리로 MEMBER 100명을 조회합니다.
 SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대한 조회가 필요하다면 MEMBER 조회 시 TEAM에 대한 조회도 같이 이루어집니다.
-결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; 100 = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 조회라고 기억하는 편입니다.
+결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; N(100) = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 문제라고 기억하는 편입니다.
 이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다."/>
 
 
@@ -187,8 +187,8 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 다음과 같은 쿼리로 MEMBER 100명을 조회합니다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> MEMBER;
 </span></span></code></pre></div><p>하지만 이 조회로 끝나는게 아니라 TEAM에 대한 조회가 필요하다면 MEMBER 조회 시 TEAM에 대한 조회도 같이 이루어집니다.<br>
-결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 <strong>1 + 100 = 101</strong> 번의 SQL 조회가 이루어 집니다.
-그래서 저는 이 현상을 <strong>1 + N</strong> 조회라고 기억하는 편입니다.</p>
+결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 <strong>1 + N(100) = 101</strong> 번의 SQL 조회가 이루어 집니다.
+그래서 저는 이 현상을 <strong>1 + N</strong> 문제라고 기억하는 편입니다.</p>
 <p>이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다.</p>
 <ol>
 <li><strong>EAGER 로딩 설정 변경</strong> : FetcyType을 EAGER로 변경하여 모든 엔티티를 한번에 검색하여 1번의 SQL로 필요한 모든 데이터를 가져올 수 있습니다. 하지만 이 방법은 성능 문제를 유발하므로 신중하게 사용해야 합니다.</li>
