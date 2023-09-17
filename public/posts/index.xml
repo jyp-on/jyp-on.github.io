@@ -46,7 +46,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 첫 조회 시점에 SELECT MEMBER, TEAM, ORDER SQL을 날린다.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Member member <span style="color:#f92672">=</span> jpa<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>Member<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> memberId<span style="color:#f92672">);</span> 
 </span></span></code></pre></div><p>즉시로딩은 한번 조회시에 모든 객체가 필요한 상황에서 쓰일 수 있으며<br>
-이런 경우를 제외하고는 지연로딩을 통해 메모리를 아껴야 한다.</p>
+이런 경우를 제외하고는 지연로딩을 통해 불필요한 SQL을 줄여야 한다.</p>
 ]]></content>
         </item>
         
