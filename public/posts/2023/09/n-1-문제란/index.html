@@ -45,7 +45,7 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 결국 100명의 회원에 대한 조회에서 회원마다의 팀 조회까지 이루어져 총 1 &#43; 100 = 101 번의 SQL 조회가 이루어 집니다. 그래서 저는 이 현상을 1 &#43; N 조회라고 기억하는 편입니다.
 이러한 문제를 해결하기 위해 몇 가지 방법이 있습니다."><meta itemprop="datePublished" content="2023-09-16T05:10:00-06:00" />
 <meta itemprop="dateModified" content="2023-09-16T05:10:00-06:00" />
-<meta itemprop="wordCount" content="145"><meta itemprop="image" content="https://jyp-on.dev"/>
+<meta itemprop="wordCount" content="153"><meta itemprop="image" content="https://jyp-on.dev"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jyp-on.dev"/>
@@ -151,7 +151,7 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        145 Words
+        153 Words
       </p>
 
       <p>
@@ -195,6 +195,10 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 <li><strong>Fetch Join</strong> : JPQL 쿼리를 사용하여 Fetch Join을 사용하면 한번의 쿼리로 필요한 데이터를 가져 올 수 있습니다.</li>
 <li><strong>쿼리 최적화</strong> : Native 쿼리나 JPQL을 사용하여 필요한 데이터만 검색하도록 쿼리를 최적화 할 수 있습니다.</li>
 <li><strong>DTO로 조회</strong> : 필요한 데이터만 DTO로 매핑하여 조회 할 수 있습니다. <a href="https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/">관련 자료</a></li>
+</ol>
+<h2 id="참고문헌">참고문헌</h2>
+<ol>
+<li>김영한. (2015. 자바 ORM 표준 JPA 프로그래밍)</li>
 </ol>
 
       </div>

@@ -33,6 +33,10 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 <li><strong>쿼리 최적화</strong> : Native 쿼리나 JPQL을 사용하여 필요한 데이터만 검색하도록 쿼리를 최적화 할 수 있습니다.</li>
 <li><strong>DTO로 조회</strong> : 필요한 데이터만 DTO로 매핑하여 조회 할 수 있습니다. <a href="https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/">관련 자료</a></li>
 </ol>
+<h2 id="참고문헌">참고문헌</h2>
+<ol>
+<li>김영한. (2015. 자바 ORM 표준 JPA 프로그래밍)</li>
+</ol>
 ]]></content>
         </item>
         
@@ -74,6 +78,10 @@ SELECT * FROM MEMBER; 하지만 이 조회로 끝나는게 아니라 TEAM에 대
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Member member <span style="color:#f92672">=</span> jpa<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>Member<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> memberId<span style="color:#f92672">);</span> 
 </span></span></code></pre></div><p>즉시로딩은 한번 조회시에 모든 객체가 필요한 상황에서 쓰일 수 있으며<br>
 이런 경우를 제외하고는 지연로딩을 통해 불필요한 SQL을 줄여야 한다.</p>
+<h2 id="참고문헌">참고문헌</h2>
+<ol>
+<li>김영한. (2015. 자바 ORM 표준 JPA 프로그래밍)</li>
+</ol>
 ]]></content>
         </item>
         
