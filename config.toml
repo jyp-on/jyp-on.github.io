@@ -52,8 +52,6 @@ disableHugoGeneratorInject = false
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
-
-  robotsTxt = "User-agent: *\nAllow: /"
   # Metadata mostly used in document's head
   # 
   description = "Nice theme for homepages and blogs"
@@ -62,7 +60,7 @@ disableHugoGeneratorInject = false
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = "Backend Devloper"
+  homeSubtitle = "Backend Developer"
 
   # Set a background for the homepage
   # backgroundImage = "/index/portrait.png"
