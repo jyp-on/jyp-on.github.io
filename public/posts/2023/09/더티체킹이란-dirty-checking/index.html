@@ -9,7 +9,7 @@
 JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를 저장하며 이것을 스냅샷 이라고 부른다.
 어떠한 방식으로 변경을 감지하는지 살펴보자. 트랜잭션을 커밋 하는시점에 엔티티 매니져 내부에서 flush가 호출된다. 엔티티와 스냅샷을 비교하여 변경된 부분을 찾는다. 변경된 부분이 있으면 수정 쿼리를 생성해 쓰기 지연 SQL 저장소에 보관한다. 쓰기 지연 저장소의 SQL을 데이터베이스에 보낸다. 데이터베이스 트랜잭션을 커밋한다. 위와 같은 flow로 진행된다.
 변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티에만 적용되며, 이는 즉 비영속, 준영속 처럼 영속성 컨텍스트의 관리를 받지 못하는 엔티티는 값을 변경하여도 데이터베이스에 반영이 되지 않는다." />
-<meta name="keywords" content=", jpa" />
+<meta name="keywords" content="개발, jpa" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/" />
@@ -29,6 +29,11 @@ JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를
 
 
 
+    
+    
+    
+    
+    
     <link rel="apple-touch-icon" sizes="180x180" href="https://jyp-on.dev/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://jyp-on.dev/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://jyp-on.dev/favicon-16x16.png">
