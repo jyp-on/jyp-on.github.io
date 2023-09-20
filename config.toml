@@ -1,5 +1,5 @@
 baseURL = "https://jyp-on.dev"
-title   = "😎"
+title   = "DevNotes"
 languageCode = "ko-kr"
 theme = "hello-friend-ng"
 
@@ -54,8 +54,8 @@ disableHugoGeneratorInject = false
   dateformNumTime = "2006-01-02 15:04"
   # Metadata mostly used in document's head
   # 
-  description = ""
-  keywords = "개발"
+  description = "dev blog"
+  keywords = "dev blog"
   images = [""]
 
   # Home subtitle of the index page.
