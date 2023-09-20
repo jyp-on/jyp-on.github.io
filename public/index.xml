@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>&lt;{😎}&gt;</title>
+    <title>😎</title>
     <link>https://jyp-on.dev/</link>
-    <description>Recent content on &lt;{😎}&gt;</description>
+    <description>Recent content on 😎</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 16 Sep 2023 05:10:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>더티체킹이란? (dirty checking)</title>
+      <link>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</link>
+      <pubDate>Wed, 20 Sep 2023 12:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</guid>
+      <description>먼저 더티체킹이란 직역하면 더러운 것을 체크 한다는 뜻인데, 변경 감지라고 이해하면 된다.
+JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를 저장하며 이것을 스냅샷 이라고 부른다.
+어떠한 방식으로 변경을 감지하는지 살펴보자. 트랜잭션을 커밋 하는시점에 엔티티 매니져 내부에서 flush가 호출된다. 엔티티와 스냅샷을 비교하여 변경된 부분을 찾는다. 변경된 부분이 있으면 수정 쿼리를 생성해 쓰기 지연 SQL 저장소에 보관한다. 쓰기 지연 저장소의 SQL을 데이터베이스에 보낸다. 데이터베이스 트랜잭션을 커밋한다. 위와 같은 flow로 진행된다.
+변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티에만 적용되며, 이는 즉 비영속, 준영속 처럼 영속성 컨텍스트의 관리를 받지 못하는 엔티티는 값을 변경하여도 데이터베이스에 반영이 되지 않는다.</description>
+    </item>
+    
     <item>
       <title>N&#43;1 문제란</title>
       <link>https://jyp-on.dev/posts/2023/09/n-1-%EB%AC%B8%EC%A0%9C%EB%9E%80/</link>

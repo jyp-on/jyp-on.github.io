@@ -1,11 +1,11 @@
 +++
 title = "Spring Boot JPQL DTO Mapping"
 tags = [
-    "jpql"
+    "jpql", "jpa"
 ]
 date = "2023-09-08T22:16:00-06:00"
 # date = "2023-09-02T16:14:00-06:00"
-categories = ["spring boot", "jpa"]
+categories = ["spring boot"]
 +++
 jpa를 사용할때 jpa repository에서 return 을 **DTO**로 변환해서 받을 수 있다.
 

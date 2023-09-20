@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on &lt;{😎}&gt;</title>
+    <title>Categories on 😎</title>
     <link>https://jyp-on.dev/categories/</link>
-    <description>Recent content in Categories on &lt;{😎}&gt;</description>
+    <description>Recent content in Categories on 😎</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 16 Sep 2023 05:10:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>jpa</title>
-      <link>https://jyp-on.dev/categories/jpa/</link>
-      <pubDate>Sat, 16 Sep 2023 05:10:00 -0600</pubDate>
-      
-      <guid>https://jyp-on.dev/categories/jpa/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>spring boot</title>
       <link>https://jyp-on.dev/categories/spring-boot/</link>
-      <pubDate>Fri, 08 Sep 2023 22:16:00 -0600</pubDate>
+      <pubDate>Wed, 20 Sep 2023 12:16:00 -0600</pubDate>
       
       <guid>https://jyp-on.dev/categories/spring-boot/</guid>
       <description></description>

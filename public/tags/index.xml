@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on &lt;{😎}&gt;</title>
+    <title>Tags on 😎</title>
     <link>https://jyp-on.dev/tags/</link>
-    <description>Recent content in Tags on &lt;{😎}&gt;</description>
+    <description>Recent content in Tags on 😎</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Sep 2023 23:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>orm</title>
-      <link>https://jyp-on.dev/tags/orm/</link>
-      <pubDate>Fri, 15 Sep 2023 23:16:00 -0600</pubDate>
+      <title>jpa</title>
+      <link>https://jyp-on.dev/tags/jpa/</link>
+      <pubDate>Wed, 20 Sep 2023 12:16:00 -0600</pubDate>
       
-      <guid>https://jyp-on.dev/tags/orm/</guid>
+      <guid>https://jyp-on.dev/tags/jpa/</guid>
       <description></description>
     </item>
     

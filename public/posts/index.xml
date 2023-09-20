@@ -1,13 +1,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on &lt;{😎}&gt;</title>
+        <title>Posts on 😎</title>
         <link>https://jyp-on.dev/posts/</link>
-        <description>Recent content in Posts on &lt;{😎}&gt;</description>
+        <description>Recent content in Posts on 😎</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-        <lastBuildDate>Sat, 16 Sep 2023 05:10:00 -0600</lastBuildDate>
+        <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate>
         <atom:link href="https://jyp-on.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>더티체킹이란? (dirty checking)</title>
+            <link>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</link>
+            <pubDate>Wed, 20 Sep 2023 12:16:00 -0600</pubDate>
+            
+            <guid>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</guid>
+            <description>먼저 더티체킹이란 직역하면 더러운 것을 체크 한다는 뜻인데, 변경 감지라고 이해하면 된다.
+JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를 저장하며 이것을 스냅샷 이라고 부른다.
+어떠한 방식으로 변경을 감지하는지 살펴보자. 트랜잭션을 커밋 하는시점에 엔티티 매니져 내부에서 flush가 호출된다. 엔티티와 스냅샷을 비교하여 변경된 부분을 찾는다. 변경된 부분이 있으면 수정 쿼리를 생성해 쓰기 지연 SQL 저장소에 보관한다. 쓰기 지연 저장소의 SQL을 데이터베이스에 보낸다. 데이터베이스 트랜잭션을 커밋한다. 위와 같은 flow로 진행된다.
+변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티에만 적용되며, 이는 즉 비영속, 준영속 처럼 영속성 컨텍스트의 관리를 받지 못하는 엔티티는 값을 변경하여도 데이터베이스에 반영이 되지 않는다.</description>
+            <content type="html"><![CDATA[<p>먼저 더티체킹이란 직역하면 더러운 것을 체크 한다는 뜻인데, 변경 감지라고 이해하면 된다.<br>
+JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를 저장하며 이것을 <strong>스냅샷</strong> 이라고 부른다.</p>
+<h2 id="어떠한-방식으로-변경을-감지하는지-살펴보자">어떠한 방식으로 변경을 감지하는지 살펴보자.</h2>
+<ol>
+<li>트랜잭션을 커밋 하는시점에 엔티티 매니져 내부에서 flush가 호출된다.</li>
+<li>엔티티와 스냅샷을 비교하여 변경된 부분을 찾는다.</li>
+<li>변경된 부분이 있으면 수정 쿼리를 생성해 쓰기 지연 SQL 저장소에 보관한다.</li>
+<li>쓰기 지연 저장소의 SQL을 데이터베이스에 보낸다.</li>
+<li>데이터베이스 트랜잭션을 커밋한다.</li>
+</ol>
+<p>위와 같은 flow로 진행된다.<br>
+변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티에만 적용되며, 이는 즉 비영속, 준영속 처럼 영속성 컨텍스트의
+관리를 받지 못하는 엔티티는 값을 변경하여도 데이터베이스에 반영이 되지 않는다. 즉 더티체킹을 못한다.</p>
+<h3 id="예제코드">예제코드</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>EntityManager em <span style="color:#f92672">=</span> emf<span style="color:#f92672">.</span><span style="color:#a6e22e">createEntityManager</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 팩토리로부터 엔티티 매니져 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>EntityTransaction transaction <span style="color:#f92672">=</span> em<span style="color:#f92672">.</span><span style="color:#a6e22e">getTransaction</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 트랜잭션 생성
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>transaction<span style="color:#f92672">.</span><span style="color:#a6e22e">begin</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 트랜잭션 시작
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 엔티티를 조회하여 영속성 컨텍스트안에 엔티티가 존재.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Member memberA <span style="color:#f92672">=</span> em<span style="color:#f92672">.</span><span style="color:#a6e22e">persist</span><span style="color:#f92672">(</span>Member<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;MemberA&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>memberA<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AA&#34;</span><span style="color:#f92672">);</span> <span style="color:#75715e">//이름 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>transaction<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 트랜잭션 커밋
+</span></span></span></code></pre></div><p>위와 같이 영속성 컨텍스트로 불러온 memberA 인스턴스를 변경하면 flush 시점에 스냅샷과 비교하여 변경된 부분을 찾아낸다.
+참고로 아래와 같이 수정된 데이터만을 SQL에 반영할 것으로 예상하지만</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> MEMBER
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> NAME <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>
+</span></span></code></pre></div><p>실제로는 JPA의 기본 전략에 의해 엔티티의 모든 필드를 업데이트한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> MEMBER
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> NAME <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>,
+</span></span><span style="display:flex;"><span>    AGE <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>,
+</span></span><span style="display:flex;"><span>    GRADE <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>,
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#f92672">?</span>
+</span></span></code></pre></div><p>이렇게 하는 이유는 크게 2가지가 있다.</p>
+<ul>
+<li>모든 필드를 사용하면 수정 쿼리가 같으므로 애플리케이션 로딩 시점에 쿼리를 생성해두고 재사용 가능하다.</li>
+<li>DB 입장에서는 동일한 쿼리를 보내면 이전에 파싱해둔 쿼리를 재사용 가능하다.
+하지만 필드가 많거나 저장되는 내용이 매우 크다면 수정된 데이터만을 사용하는 동적생성 전략을 하이버네이트의 확장 기능을 이용해
+사용하면 된다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@org.hibernate.annotations.DynamicUpdate</span>
+</span></span></code></pre></div><p>수정된 데이터만을 사용해 UPDATE SQL을 생성한다.<br>
+참고로 null이 아닌 필드만으로 INSERT SQL을 동적으로 생성하는 @DynamicInsert라는 것도 있다.</p>
+<h2 id="참고사항">참고사항</h2>
+<p>보통 컬럼이 30개 이상되면 @DynamicUpdate가 빠르다고 한다. 하지만 30개 이상의 컬럼이 한 테이블에 있다는 것 자체가 책임이 적절하게 분리되지 않았을 가능성이 높으므로 설계를 잘 하였는지 고민 하는 시간이 필요할 것이다.</p>
+]]></content>
+        </item>
         
         <item>
             <title>N&#43;1 문제란</title>

@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spring boot on &lt;{😎}&gt;</title>
+    <title>spring boot on 😎</title>
     <link>https://jyp-on.dev/categories/spring-boot/</link>
-    <description>Recent content in spring boot on &lt;{😎}&gt;</description>
+    <description>Recent content in spring boot on 😎</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 08 Sep 2023 22:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>더티체킹이란? (dirty checking)</title>
+      <link>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</link>
+      <pubDate>Wed, 20 Sep 2023 12:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</guid>
+      <description>먼저 더티체킹이란 직역하면 더러운 것을 체크 한다는 뜻인데, 변경 감지라고 이해하면 된다.
+JPA는 엔티티를 영속성 컨텍스트에 보관할 때, 최초의 상태를 저장하며 이것을 스냅샷 이라고 부른다.
+어떠한 방식으로 변경을 감지하는지 살펴보자. 트랜잭션을 커밋 하는시점에 엔티티 매니져 내부에서 flush가 호출된다. 엔티티와 스냅샷을 비교하여 변경된 부분을 찾는다. 변경된 부분이 있으면 수정 쿼리를 생성해 쓰기 지연 SQL 저장소에 보관한다. 쓰기 지연 저장소의 SQL을 데이터베이스에 보낸다. 데이터베이스 트랜잭션을 커밋한다. 위와 같은 flow로 진행된다.
+변경 감지는 영속성 컨텍스트가 관리하는 영속 상태의 엔티티에만 적용되며, 이는 즉 비영속, 준영속 처럼 영속성 컨텍스트의 관리를 받지 못하는 엔티티는 값을 변경하여도 데이터베이스에 반영이 되지 않는다.</description>
+    </item>
+    
+    <item>
+      <title>지연로딩, 즉시로딩이란?</title>
+      <link>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</link>
+      <pubDate>Fri, 15 Sep 2023 23:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</guid>
+      <description>Fetch Type 설명 지연로딩 (LAZY) 연관된 객체를 사용하는 시점에 적절한 SELECT SQL을 실행 즉시로딩 (EAGER) 메인 객체 조회시 객체그래프를 탐색하여 연관된 객체 전부 SELECT 지연로딩을 예를 들어 Member에 직접적으로 연관된 테이블이 Team, Order이 있다고 치자.
+// 첫 조회 시점에 SELECT MEMBER SQL을 날리고 Member member = jpa.find(Member.class, memberId); Team team = member.getTeam(); team.getTeamName(); // 이 시점에 SELECT TEAM SQL을 날린다. 즉시로딩 Example
+// 첫 조회 시점에 SELECT MEMBER, TEAM, ORDER SQL을 날린다.</description>
+    </item>
+    
     <item>
       <title>Spring Boot JPQL DTO Mapping</title>
       <link>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</link>
