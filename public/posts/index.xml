@@ -6,8 +6,65 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-        <lastBuildDate>Wed, 20 Sep 2023 12:16:00 -0600</lastBuildDate>
+        <lastBuildDate>Thu, 21 Sep 2023 02:16:00 -0600</lastBuildDate>
         <atom:link href="https://jyp-on.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>jpa error - (integer not null)</title>
+            <link>https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/</link>
+            <pubDate>Thu, 21 Sep 2023 02:16:00 -0600</pubDate>
+            
+            <guid>https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/</guid>
+            <description>오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..
+문제의 Entity는 다음과 같다.
+@Getter @Builder @AllArgsConstructor @NoArgsConstructor @Table(name = &amp;#34;reservation_time&amp;#34;) @Entity public class Time { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long tno; private LocalDate date; private int index; @JsonBackReference @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = &amp;#34;mid&amp;#34;, nullable = false) private Admin admin; public void setAdmin(Admin admin) { this.admin = admin; } } 문제점을 찾았으면 이 글을 더이상 보지 않아도 된다.</description>
+            <content type="html"><![CDATA[<p>오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..<br>
+문제의 Entity는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Getter</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Builder</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@AllArgsConstructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@NoArgsConstructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;reservation_time&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Time</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">IDENTITY</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long tno<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate date<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JsonBackReference</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">LAZY</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mid&#34;</span><span style="color:#f92672">,</span> nullable <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Admin admin<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAdmin</span><span style="color:#f92672">(</span>Admin admin<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> admin<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>문제점을 찾았으면 이 글을 더이상 보지 않아도 된다.
+엔티티에 대한 설명을 간단히 하자면 관리자의 예약시간을 저장하는 엔티티이다.<br>
+예약을 받으면 Time entity에 1개의 row가 생기고 admin과 연관관계를 맺는다.</p>
+<p>하지만 위처럼 코드를 작성하면 다음과 같은 에러를 마주한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>WARN 37304 --- [  restartedMain] o.m.jdbc.message.server.ErrorPacket
+</span></span><span style="display:flex;"><span>      : Error: 1064-42000: You have an error in your SQL syntax; 
+</span></span><span style="display:flex;"><span>      check the manual that corresponds to 
+</span></span><span style="display:flex;"><span>      your MariaDB server version for the right syntax to use near &#39;integer not null,
+</span></span></code></pre></div><p>나는 이것을 보고 왜 이런 오류가 뜨는지 이유를 알 수 없었다.<br>
+<em><strong>sql을 직접 짠 것도 아닌데 syntax Error..?</strong></em></p>
+<p>영문을 몰라서 나의 영원한 친구 뤼튼에게 질문을 해보았지만 얘도 계속 잘못짚길래 다시 영원한 고통으로 빠져들었다&hellip;
+좀 더 고민을 해보니 date나 index 라는 컬럼명이 눈에 들어왔다.<br>
+<em><strong>설마 예약어가 겹쳐서..?</strong></em></p>
+<p>index라는 예약어가 있었던 것 같은 생각이 주마등을 스쳐갔다.
+아래와 같이 바꾸니 ddl 문이 정상적으로 작동하였다.. ㅠ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;time_index&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">;</span>
+</span></span></code></pre></div><h2 id="오늘의-교훈--좀-더-창의적으로-의심하자">오늘의 교훈 : 좀 더 창의적으로 의심하자.</h2>
+]]></content>
+        </item>
         
         <item>
             <title>더티체킹이란? (dirty checking)</title>
