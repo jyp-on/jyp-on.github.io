@@ -202,4 +202,4 @@ disableHugoGeneratorInject = false
 [sitemap]
   changeFreq = ''
   filename = 'sitemap.xml'
-  priority = 1
+  priority = -1

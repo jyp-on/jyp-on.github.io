@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on DevCloud</title>
+    <link>https://jyp-on.dev/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on DevCloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 13 Oct 2023 02:16:00 -0600</lastBuildDate><atom:link href="https://jyp-on.dev/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 일반 사용자 Root 권한 추가</title>
+      <link>https://jyp-on.dev/posts/2023/10/linux-%EC%9D%BC%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90-root-%EA%B6%8C%ED%95%9C-%EC%B6%94%EA%B0%80/</link>
+      <pubDate>Fri, 13 Oct 2023 02:16:00 -0600</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/10/linux-%EC%9D%BC%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90-root-%EA%B6%8C%ED%95%9C-%EC%B6%94%EA%B0%80/</guid>
+      <description>본 포스팅은 Ubuntu 22.04.3 LTS 환경을 사용하고 있습니다. super user 리스트에 들어가서 다음과 같이 일반 사용자에게도 super user 권한을 등록합니다. // 꼭 sudo를 붙여줘야 수정 가능합니다. sudo vi /etc/sudoers uid, gid를 0으로 수정합니다. vi /etc/passwd root group에서 내가 사용할 사용자의 username을 적는다 vi /etc/group 여기까지 하면 jyp라는 사용자에게 root권한을 부여하는 것이 끝났습니다.
+하지만 jyp를 ssh를 통해서 원격으로 접속할 시 Permission Denied가 됩니다.
+SSH의 설정 파일중 default로 Root권한을 가진 사용자로는 SSH 접속을 막기 때문입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

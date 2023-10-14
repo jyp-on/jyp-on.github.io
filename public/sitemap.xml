@@ -3,71 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jyp-on.dev/categories/</loc>
-    <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
   </url><url>
     <loc>https://jyp-on.dev/</loc>
-    <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/categories/linux/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/posts/2023/10/linux-%EC%9D%BC%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90-root-%EA%B6%8C%ED%95%9C-%EC%B6%94%EA%B0%80/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/permission-denied/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/posts/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/root/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/ssh/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
+  </url><url>
+    <loc>https://jyp-on.dev/tags/ubuntu/</loc>
+    <lastmod>2023-10-13T02:16:00-06:00</lastmod>
   </url><url>
     <loc>https://jyp-on.dev/categories/error/</loc>
     <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/jpa/</loc>
     <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/</loc>
     <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
-  </url><url>
-    <loc>https://jyp-on.dev/posts/</loc>
-    <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/categories/spring-boot/</loc>
     <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
-  </url><url>
-    <loc>https://jyp-on.dev/tags/</loc>
-    <lastmod>2023-09-21T02:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/</loc>
     <lastmod>2023-09-20T12:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/n-1-%EB%AC%B8%EC%A0%9C%EB%9E%80/</loc>
     <lastmod>2023-09-16T05:10:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9%EC%9D%B4%EB%9E%80/</loc>
     <lastmod>2023-09-15T23:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/jpql/</loc>
     <lastmod>2023-09-08T22:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/spring-boot-jpql-dto-mapping/</loc>
     <lastmod>2023-09-08T22:16:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/naver-cloud/</loc>
     <lastmod>2023-09-02T16:14:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/tags/object-storage/</loc>
     <lastmod>2023-09-02T16:14:00-06:00</lastmod>
-    <priority>1</priority>
   </url><url>
     <loc>https://jyp-on.dev/posts/2023/09/spring-boot-navercloud-objectstorage-%EC%82%AC%EC%9A%A9%EB%B2%95/</loc>
     <lastmod>2023-09-02T16:14:00-06:00</lastmod>
-    <priority>1</priority>
-  </url><url>
-    <loc>https://jyp-on.dev/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-    <priority>1</priority>
   </url>
 </urlset>
