@@ -20,6 +20,18 @@ SSH의 설정 파일중 default로 Root권한을 가진 사용자로는 SSH 접�
     </item>
     
     <item>
+      <title>Docker에 nginx 컨테이너 올리기</title>
+      <link>https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/</link>
+      <pubDate>Thu, 05 Oct 2023 02:16:00 -1200</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/</guid>
+      <description>Docker에 nginx를 올리는 방법은 다음과 같다.
+// 5121 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다. docker run -dit --name {name} -p 5121:80 nginx 하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.
+nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.
+docker exec -it {컨테이너이름} /bin/bash -exec는 뒤에 명령어를 실행 하는 것 or docker attach {컨테이너이름} -바로 컨테이너에 들어가는 것 -it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다.</description>
+    </item>
+    
+    <item>
       <title>jpa error - (integer not null)</title>
       <link>https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/</link>
       <pubDate>Thu, 21 Sep 2023 02:16:00 -0600</pubDate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on DevCloud</title>
+    <link>https://jyp-on.dev/categories/docker/</link>
+    <description>Recent content in Docker on DevCloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 05 Oct 2023 02:16:00 -1200</lastBuildDate><atom:link href="https://jyp-on.dev/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker에 nginx 컨테이너 올리기</title>
+      <link>https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/</link>
+      <pubDate>Thu, 05 Oct 2023 02:16:00 -1200</pubDate>
+      
+      <guid>https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/</guid>
+      <description>Docker에 nginx를 올리는 방법은 다음과 같다.
+// 5121 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다. docker run -dit --name {name} -p 5121:80 nginx 하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.
+nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.
+docker exec -it {컨테이너이름} /bin/bash -exec는 뒤에 명령어를 실행 하는 것 or docker attach {컨테이너이름} -바로 컨테이너에 들어가는 것 -it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,18 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="JuYoung Park ">
-<meta name="description" content="오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..
-문제의 Entity는 다음과 같다.
-@Getter @Builder @AllArgsConstructor @NoArgsConstructor @Table(name = &amp;#34;reservation_time&amp;#34;) @Entity public class Time { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long tno; private LocalDate date; private int index; @JsonBackReference @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = &amp;#34;mid&amp;#34;, nullable = false) private Admin admin; public void setAdmin(Admin admin) { this.admin = admin; } } 문제점을 찾았으면 이 글을 더이상 보지 않아도 된다." />
-<meta name="keywords" content="dev blog, jpa" />
+<meta name="description" content="Docker에 nginx를 올리는 방법은 다음과 같다.
+// 5121 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다. docker run -dit --name {name} -p 5121:80 nginx 하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.
+nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.
+docker exec -it {컨테이너이름} /bin/bash -exec는 뒤에 명령어를 실행 하는 것 or docker attach {컨테이너이름} -바로 컨테이너에 들어가는 것 -it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다." />
+<meta name="keywords" content="dev blog, nginx, container, apache" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/" />
+<link rel="canonical" href="https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/" />
 
 
     <title>
         
-            jpa error - (integer not null) :: DevCloud 
+            Docker에 nginx 컨테이너 올리기 :: DevCloud 
         
     </title>
 
@@ -39,32 +40,32 @@
     
 
 
-<meta itemprop="name" content="jpa error - (integer not null)">
-<meta itemprop="description" content="오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..
-문제의 Entity는 다음과 같다.
-@Getter @Builder @AllArgsConstructor @NoArgsConstructor @Table(name = &#34;reservation_time&#34;) @Entity public class Time { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long tno; private LocalDate date; private int index; @JsonBackReference @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = &#34;mid&#34;, nullable = false) private Admin admin; public void setAdmin(Admin admin) { this.admin = admin; } } 문제점을 찾았으면 이 글을 더이상 보지 않아도 된다."><meta itemprop="datePublished" content="2023-09-21T02:16:00-06:00" />
-<meta itemprop="dateModified" content="2023-09-21T02:16:00-06:00" />
-<meta itemprop="wordCount" content="210"><meta itemprop="image" content="https://jyp-on.dev"/>
-<meta itemprop="keywords" content="jpa," />
+<meta itemprop="name" content="Docker에 nginx 컨테이너 올리기">
+<meta itemprop="description" content="Docker에 nginx를 올리는 방법은 다음과 같다.
+// 5121 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다. docker run -dit --name {name} -p 5121:80 nginx 하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.
+nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.
+docker exec -it {컨테이너이름} /bin/bash -exec는 뒤에 명령어를 실행 하는 것 or docker attach {컨테이너이름} -바로 컨테이너에 들어가는 것 -it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다."><meta itemprop="datePublished" content="2023-10-05T02:16:00-12:00" />
+<meta itemprop="dateModified" content="2023-10-05T02:16:00-12:00" />
+<meta itemprop="wordCount" content="176"><meta itemprop="image" content="https://jyp-on.dev"/>
+<meta itemprop="keywords" content="nginx,container,apache," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jyp-on.dev"/>
 
-<meta name="twitter:title" content="jpa error - (integer not null)"/>
-<meta name="twitter:description" content="오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..
-문제의 Entity는 다음과 같다.
-@Getter @Builder @AllArgsConstructor @NoArgsConstructor @Table(name = &#34;reservation_time&#34;) @Entity public class Time { @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long tno; private LocalDate date; private int index; @JsonBackReference @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = &#34;mid&#34;, nullable = false) private Admin admin; public void setAdmin(Admin admin) { this.admin = admin; } } 문제점을 찾았으면 이 글을 더이상 보지 않아도 된다."/>
+<meta name="twitter:title" content="Docker에 nginx 컨테이너 올리기"/>
+<meta name="twitter:description" content="Docker에 nginx를 올리는 방법은 다음과 같다.
+// 5121 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다. docker run -dit --name {name} -p 5121:80 nginx 하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.
+nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.
+docker exec -it {컨테이너이름} /bin/bash -exec는 뒤에 명령어를 실행 하는 것 or docker attach {컨테이너이름} -바로 컨테이너에 들어가는 것 -it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다."/>
 
 
 
 
 
-    <meta property="article:section" content="spring boot" />
-
-    <meta property="article:section" content="error" />
+    <meta property="article:section" content="Docker" />
 
 
 
-    <meta property="article:published_time" content="2023-09-21 02:16:00 -0600 -0600" />
+    <meta property="article:published_time" content="2023-10-05 02:16:00 -1200 -1200" />
 
 
 
@@ -136,7 +137,9 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://jyp-on.dev/tags/jpa/">jpa</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/tags/nginx/">nginx</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/tags/container/">container</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/tags/apache/">apache</a></span>
         
     </p>
 
@@ -144,8 +147,7 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://jyp-on.dev/categories/spring-boot/">spring boot</a></span>
-        <span class="tag"><a href="https://jyp-on.dev/categories/error/">error</a></span>
+        <span class="tag"><a href="https://jyp-on.dev/categories/docker/">Docker</a></span>
         
     </p>
 
@@ -158,7 +160,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        210 Words
+        176 Words
       </p>
 
       <p>
@@ -169,7 +171,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2023-09-21 17:16
+          2023-10-05 23:16
         
 
          
@@ -180,7 +182,7 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/">jpa error - (integer not null)</a>
+        <a href="https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/">Docker에 nginx 컨테이너 올리기</a>
       </h1>
 
       
@@ -190,51 +192,30 @@
       
 
       <div class="post-content">
-        <p>오늘 jpa entity를 설계하다가 예상치 못한 에러를 겪은 썰을 풀고자 한다..<br>
-문제의 Entity는 다음과 같다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Getter</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Builder</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@AllArgsConstructor</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@NoArgsConstructor</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;reservation_time&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Time</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy <span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">IDENTITY</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long tno<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDate date<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JsonBackReference</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@ManyToOne</span><span style="color:#f92672">(</span>fetch <span style="color:#f92672">=</span> FetchType<span style="color:#f92672">.</span><span style="color:#a6e22e">LAZY</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JoinColumn</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mid&#34;</span><span style="color:#f92672">,</span> nullable <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Admin admin<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAdmin</span><span style="color:#f92672">(</span>Admin admin<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">admin</span> <span style="color:#f92672">=</span> admin<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>문제점을 찾았으면 이 글을 더이상 보지 않아도 된다.
-엔티티에 대한 설명을 간단히 하자면 관리자의 예약시간을 저장하는 엔티티이다.<br>
-예약을 받으면 Time entity에 1개의 row가 생기고 admin과 연관관계를 맺는다.</p>
-<p>하지만 위처럼 코드를 작성하면 다음과 같은 에러를 마주한다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>WARN 37304 --- [  restartedMain] o.m.jdbc.message.server.ErrorPacket
-</span></span><span style="display:flex;"><span>      : Error: 1064-42000: You have an error in your SQL syntax; 
-</span></span><span style="display:flex;"><span>      check the manual that corresponds to 
-</span></span><span style="display:flex;"><span>      your MariaDB server version for the right syntax to use near &#39;integer not null,
-</span></span></code></pre></div><p>나는 이것을 보고 왜 이런 오류가 뜨는지 이유를 알 수 없었다.<br>
-<em><strong>sql을 직접 짠 것도 아닌데 syntax Error..?</strong></em></p>
-<p>영문을 몰라서 나의 영원한 친구 뤼튼에게 질문을 해보았지만 얘도 계속 잘못짚길래 다시 영원한 고통으로 빠져들었다&hellip;
-좀 더 고민을 해보니 date나 index 라는 컬럼명이 눈에 들어왔다.<br>
-<em><strong>설마 예약어가 겹쳐서..?</strong></em></p>
-<p>index라는 예약어가 있었던 것 같은 생각이 주마등을 스쳐갔다.
-아래와 같이 바꾸니 ddl 문이 정상적으로 작동하였다.. ㅠ</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;time_index&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">;</span>
-</span></span></code></pre></div><h2 id="오늘의-교훈--좀-더-창의적으로-의심하자">오늘의 교훈 : 좀 더 창의적으로 의심하자.</h2>
+        <p>Docker에 nginx를 올리는 방법은 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// <span style="color:#ae81ff">5121</span> 포트로 들어가면 nginx가 받아서 80포트로 넘겨준다.
+</span></span><span style="display:flex;"><span>docker run -dit --name <span style="color:#f92672">{</span>name<span style="color:#f92672">}</span> -p 5121:80 nginx
+</span></span></code></pre></div><p>하지만 이렇게 올리면 nginx 컨테이너의 bash로 들어가서 정적파일들을 특정 장소에 위치시켜줘야한다.</p>
+<p>nginx 컨테이너 bash에 들어가는 방법은 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -it <span style="color:#f92672">{</span>컨테이너이름<span style="color:#f92672">}</span> /bin/bash -exec는 뒤에 명령어를 실행 하는 것
+</span></span><span style="display:flex;"><span>or
+</span></span><span style="display:flex;"><span>docker attach <span style="color:#f92672">{</span>컨테이너이름<span style="color:#f92672">}</span> -바로 컨테이너에 들어가는 것
+</span></span></code></pre></div><ul>
+<li>-it 명령어는 컨테이너 속 터미널 입력을 할수 있도록 하는데 터미널에서 /bin/bash를 실행해서 bash shell로 들어갈수 있다.</li>
+</ul>
+<p>하지만 볼륨을 이용해서 로컬에있는 정적파일을 nginx의 특정 장소에 바로 매핑해주면 로컬에서 파일을 자동으로 매핑해준다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name <span style="color:#f92672">{</span>컨테이너이름<span style="color:#f92672">}</span> -p 5121:80 -v /<span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>$/webroot/:/usr/share/nginx/html:ro nginx
+</span></span></code></pre></div><ul>
+<li>-d (detach mode) 명령어는 기본적으로 포그라운드에서 실행되는 컨테이너를 백그라운드로 분리하라는 명령어다. (콘솔창을 바로 사용가능하다)</li>
+<li>&ndash;name 명령어는 컨테이너 이름을 지정해주는 명령어다.</li>
+<li>-p 명령어는 클라이언트에서 5121 port로 접속하면 컨테이너 내의 80 포트로 넘겨준다.</li>
+<li>-v 명령어는 -v {호스트폴더}:{컨테이너폴더} 로 파일을 매핑해준다.</li>
+<li>:ro는 read only로 로컬저장소의 파일을 불러올떄 읽기만 허용하도록 한다.</li>
+</ul>
+<p>아파치의 컨테이너 폴더는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -dit --name <span style="color:#f92672">{</span>컨테이너이름<span style="color:#f92672">}</span> -p 5121:80 -v <span style="color:#f92672">{</span>호스트폴더<span style="color:#f92672">}</span>:/usr/local/apache2/htdocs/ httpd
+</span></span></code></pre></div><p>만약 -d 를 안쓰고 포그라운드로 들어갔다면
+exit으로 나올수 있지만 CTRL+p, CTRL_q 를 순서대로 입력하면 된다.</p>
 
       </div>
     </article>
@@ -243,7 +224,7 @@
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -251,7 +232,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -260,7 +241,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=jpa%20error%20-%20%28integer%20not%20null%29&amp;caption=jpa%20error%20-%20%28integer%20not%20null%29&amp;canonicalUrl=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;caption=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;canonicalUrl=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
   <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
     <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
@@ -269,7 +250,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=jpa%20error%20-%20%28integer%20not%20null%29&amp;body=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;body=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -277,7 +258,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f&amp;media=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f;description=jpa%20error%20-%20%28integer%20not%20null%29" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f&amp;media=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f;description=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
   <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
     </div>
@@ -285,7 +266,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f&amp;title=jpa%20error%20-%20%28integer%20not%20null%29&amp;summary=jpa%20error%20-%20%28integer%20not%20null%29&amp;source=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f&amp;title=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;summary=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;source=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -293,7 +274,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f&amp;resubmit=true&amp;title=jpa%20error%20-%20%28integer%20not%20null%29" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f&amp;resubmit=true&amp;title=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
     </div>
@@ -301,7 +282,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f;title=jpa%20error%20-%20%28integer%20not%20null%29" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f;title=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0" target="_blank" rel="noopener" aria-label="" title="Share on xing">
   <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
     </div>
@@ -309,7 +290,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=jpa%20error%20-%20%28integer%20not%20null%29%20https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0%20https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </div>
@@ -317,7 +298,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f&amp;t=jpa%20error%20-%20%28integer%20not%20null%29" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f&amp;t=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
     </div>
@@ -325,7 +306,7 @@
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=jpa%20error%20-%20%28integer%20not%20null%29&amp;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f09%2fjpa-error-integer-not-null%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Docker%ec%97%90%20nginx%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%98%ac%eb%a6%ac%ea%b8%b0&amp;url=https%3a%2f%2fjyp-on.dev%2fposts%2f2023%2f10%2fdocker%25EC%2597%2590-nginx-%25EC%25BB%25A8%25ED%2585%258C%25EC%259D%25B4%25EB%2584%2588-%25EC%2598%25AC%25EB%25A6%25AC%25EA%25B8%25B0%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
   <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </div>
@@ -341,17 +322,17 @@
         <div class="pagination__buttons">
             
             <span class="button previous">
-                <a href="https://jyp-on.dev/posts/2023/10/docker%EC%97%90-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%98%AC%EB%A6%AC%EA%B8%B0/">
+                <a href="https://jyp-on.dev/posts/2023/10/linux-%EC%9D%BC%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90-root-%EA%B6%8C%ED%95%9C-%EC%B6%94%EA%B0%80/">
                     <span class="button__icon">←</span>
-                    <span class="button__text">Docker에 nginx 컨테이너 올리기</span>
+                    <span class="button__text">Linux 일반 사용자 Root 권한 추가</span>
                 </a>
             </span>
             
 
             
             <span class="button next">
-                <a href="https://jyp-on.dev/posts/2023/09/%EB%8D%94%ED%8B%B0%EC%B2%B4%ED%82%B9%EC%9D%B4%EB%9E%80-dirty-checking/">
-                    <span class="button__text">더티체킹이란? (dirty checking)</span>
+                <a href="https://jyp-on.dev/posts/2023/09/jpa-error-integer-not-null/">
+                    <span class="button__text">jpa error - (integer not null)</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>
