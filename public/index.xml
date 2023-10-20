@@ -115,8 +115,12 @@ Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 �
       
       <guid>https://jyp-on.dev/pr/</guid>
       <description>👨 Personal Information 👨 Name: 박주영 Major: 콘텐츠IT Student Number: 20195170
-Instagram: Link E-mail: ju0_park@naver.com Github: Link Blog: Link
-📝 Biography 저는 현재 한림대학교 정보과학대학 콘텐츠IT 전공 3학년 2학기 재학 중인 박주영입니다. 어렸을 때부터 컴퓨터 게임을 좋아했으며, 어머니가 직업 상담사이셔서 관련 직업 흥미 검사를 받아본 결과 컴퓨터 관련 학과를 가는 것이 좋을 것 같다고 하여, 소프트웨어 중심대학 중 하나인 한림대학교에 지원하게 되었습니다. 현재는 1학년 때부터 관심 있던 웹 개발을 주로 하고 있으며, 웹 개발 중에서도 백엔드(서버개발)의 재미를 느끼고 있어 백엔드 개발을 주로 하고 있습니다.</description>
+Instagram: https://www.instagram.com/jyp.on
+Github: https://github.com/jyp-on
+E-mail: ju0_park@naver.com
+Blog: https://jyp-on.dev
+📝 About Me 웹/앱 서비스 백엔드 개발과 데브옵스 개발자로써 다양한 경험이 있습니다. Node.js, Spring, MySQL, AWS, Git, Linux 등을 사용하여 프로덕션 서비스를 설계, 개발, 운영한 경험으로 확장성과 유지 보수성이 높은 백엔드 아키텍처와 패턴을 위해 언제나 고민하고 있습니다.
+오픈소스 프로젝트에 관심이 많고, 다양한 방법으로 기여를 하려고 노력하고 있습니다. 이외에도 개인 프로젝트나 개발 커뮤니티 활동 등을 통해 다양한 개발 경험을 즐기고 있습니다.</description>
     </item>
     
   </channel>
