@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=About%20the%20JuYoung😊&fontSize=60&animation=fadeIn&fontAlignY=38&desc=Hallym-Github-PR-Contest&descAlignY=70&descAlign=62)
+![header](https://capsule-render.vercel.app/api?type=Soft&color=gradient&height=300&section=header&text=About%20the%20JuYoung😊&fontSize=60&animation=fadeIn&fontAlignY=38&desc=Hallym-Github-PR-Contest&descAlignY=70&descAlign=62)
 
 ## 👨 Personal Information 👨
 
@@ -23,7 +23,7 @@
 
 1. 2022년에 교내 학술 동아리 씨애랑에서 태그(웹 개발) 팀장을 맡아 약 20명 가까이 되는 팀원들의 교육을 맡아 진행하였습니다. 아래 사진은 2022년 씨애랑의 하계 워크샵에서 백엔드 개발 교육을 하고 있는 사진입니다.
     - [Code Repo](https://github.com/mythpoy/mongoose_board_exam)
-    - ![Image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/161cdf1d-2f6f-4f35-ba81-d8d33c350e21)
+    - ![Image](/pr/하계멘토링사진.png)
 
 2. 2022년에 교내 학술동아리 씨애랑의 인원들이 너무 많아 관리하는 플랫폼이 있으면 좋겠다고 생각하여 부원관리 웹 사이트를 제작 및 배포하여 실 사용 해본 적이 있습니다.
     - [Code Repo](https://github.com/CaerangManagement/Club_Management)
@@ -33,12 +33,12 @@
 
 4. 2022년 SW Week에서 열린 오픈소스 웹개발 해커톤 대회에서 금상을 수상했습니다. 이전에 여러 프로젝트를 해본 경험이 도움이 되었던 것 같습니다.
     - [Code Repo](https://github.com/mythpoy/hackathon)
-    - ![Image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/11cba6f1-e7df-44f9-b2f5-6a9e1e84cf52)
+    - ![Image](/pr/웹개발금상.png)
 
 5. 2023년 3월, 한림대학교 대동제 축제를 더욱 재미있고 쉽게 즐길 수 있도록 대동제 웹사이트를 제작하였습니다. 이 웹사이트는 총 2만 명의 방문자를 돌파하였으며, 2달 동안 개발자 5명과 기획/디자인 팀 2명이 열심히 작업하였습니다. 많은 학우들이 방문하여 사용해주셔서, 개발자로서의 자존감이 높아졌습니다.
    - [Youtube link](https://youtu.be/ubvYQqzU7FY)
    - [Code Repo](https://github.com/Hallym-LIKELION/HallymFestival2023-Backend-)
-   - ![대동제](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/d71bbc75-a29a-4975-a976-ea0cb7aea8a3)
+   - ![대동제](/pr/대동제.png)
 
 6. 현재 공개 SW 개발자 대회 1차에 합격하여 2차 심사를 앞두고 있습니다. 상당히 큰 규모의 대회이기 때문에 학교의 위상을 높일 수 있는 좋은 기회로 삼고 열심히 준비중입니다.
    - [Code Repo](https://github.com/MotuS-Web)
@@ -46,21 +46,21 @@
 
 1. 23년도 1학기에 교내 SW 봉사 동아리 회장을 맡았으며, 미래 꿈나무들에게 창의적 인재 양성의 기초를 마련하고, 소외된 계층 또는 취약계층에게 SW 교육을 지원하여 지역의 SW 인식 개선과 지식 영역 확장을 위해 노력하였습니다.
 
-![Image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/fd490d1c-85c1-4551-bb20-ed4ca91c1c27)
+![Image](/pr/봉사활동.png)
 
 ### 🎓 Certifications
 
 1. 컴퓨터 활용능력 1급
 
-    ![Image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/e407e6df-b513-45b2-8564-ea7601911be3)
+    ![Image](/pr/컴활1급.png)
     
 2. 정보처리기능사
 
-   ![Image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/46d59b97-d10a-4e7f-bed0-35259d1909c7)
+   ![Image](/pr/정처기.png)
    
 3. Microsoft Office Specialist 2016 Master
    
-  ![image](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/b58c5873-bdf9-4536-84b5-78166099d556)
+  ![image](/pr/mos.png)
 
 
 ### 📝 Department grades
@@ -69,10 +69,10 @@
 
 1. 현재까지 받은 학점
 
-    ![성적](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/aaa8ea18-29d5-4b30-98f4-193190b7732b)
+    ![성적](/pr/성적.png)
 2. 교양보다 전공에서 학점이 더 높게 나왔습니다. 😅
    
-   ![성적2](https://github.com/jyp-on/Hallym-Github-PR-Contest/assets/52206904/13cb70b3-6bf6-4349-afc7-e0a5f62c1f8f)
+   ![성적2](/pr/성적2.png)
 
 ---
 
