@@ -108,5 +108,16 @@ objectstorage 1주간 사용해봤는데 파일 크기가 얼마안되는지 아
 Amazon의 S3랑 완벽하게 호환되고 국내서비스라 Docs를 읽을때 좀 더 쉽게 이해할 수 있었다 나는 spring boot 즉 java 언어를 사용하기 때문에 아래와 같은 Docs를 참고하여 사용하였음</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://jyp-on.dev/pr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jyp-on.dev/pr/</guid>
+      <description>👨 Personal Information 👨 Name: 박주영 Major: 콘텐츠IT Student Number: 20195170
+Instagram: Link E-mail: ju0_park@naver.com Github: Link Blog: Link
+📝 Biography 저는 현재 한림대학교 정보과학대학 콘텐츠IT 전공 3학년 2학기 재학 중인 박주영입니다. 어렸을 때부터 컴퓨터 게임을 좋아했으며, 어머니가 직업 상담사이셔서 관련 직업 흥미 검사를 받아본 결과 컴퓨터 관련 학과를 가는 것이 좋을 것 같다고 하여, 소프트웨어 중심대학 중 하나인 한림대학교에 지원하게 되었습니다. 현재는 1학년 때부터 관심 있던 웹 개발을 주로 하고 있으며, 웹 개발 중에서도 백엔드(서버개발)의 재미를 느끼고 있어 백엔드 개발을 주로 하고 있습니다.</description>
+    </item>
+    
   </channel>
 </rss>
